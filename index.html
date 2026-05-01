@@ -3,29 +3,29 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hanwith Bellamkonda | AI/ML Engineer</title>
-  <meta name="description" content="Hanwith Bellamkonda - Senior AI/ML Engineer specializing in GenAI, Agentic AI, RAG, MLOps, and scalable AI systems." />
+  <title>Hanwith Bellamkonda | Senior AI/ML Engineer</title>
+  <meta name="description" content="Portfolio of Hanwith Bellamkonda, Senior AI/ML Engineer specializing in GenAI, Agentic AI, RAG, MLOps, and scalable AI systems." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet">
 
   <style>
     :root {
-      --bg: #f7f8ff;
-      --bg2: #eef2ff;
-      --text: #101323;
-      --muted: #667085;
-      --card: rgba(255,255,255,.74);
-      --card-solid: #ffffff;
-      --line: rgba(16,24,40,.10);
-      --blue: #2563eb;
-      --purple: #7c3aed;
-      --cyan: #0891b2;
-      --green: #16a34a;
-      --pink: #db2777;
-      --orange: #f97316;
-      --shadow: 0 24px 70px rgba(21,31,64,.12);
+      --bg: #fbf8f2;
+      --bg-soft: #f3efe6;
+      --cream: #fffdf7;
+      --text: #1e2930;
+      --muted: #68737d;
+      --line: rgba(30, 41, 48, 0.12);
+      --sage: #6f8f72;
+      --sage-dark: #3f6f55;
+      --teal: #2f8f9d;
+      --clay: #c97854;
+      --gold: #d7a84f;
+      --lavender: #8b7cc1;
+      --card: rgba(255, 253, 247, 0.78);
+      --shadow: 0 24px 70px rgba(47, 61, 70, 0.12);
       --radius: 28px;
     }
 
@@ -36,10 +36,10 @@
       font-family: Inter, Arial, sans-serif;
       color: var(--text);
       background:
-        radial-gradient(circle at 12% 8%, rgba(124,58,237,.18), transparent 28%),
-        radial-gradient(circle at 88% 12%, rgba(37,99,235,.16), transparent 30%),
-        radial-gradient(circle at 50% 95%, rgba(8,145,178,.12), transparent 28%),
-        linear-gradient(180deg, #fbfcff 0%, var(--bg) 52%, #f2f5ff 100%);
+        radial-gradient(circle at 8% 8%, rgba(111, 143, 114, .22), transparent 30%),
+        radial-gradient(circle at 88% 12%, rgba(47, 143, 157, .18), transparent 31%),
+        radial-gradient(circle at 52% 95%, rgba(201, 120, 84, .16), transparent 28%),
+        linear-gradient(180deg, #fffdf8 0%, var(--bg) 48%, #f4efe5 100%);
       overflow-x: hidden;
     }
 
@@ -48,47 +48,38 @@
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background-image:
-        linear-gradient(rgba(37,99,235,.055) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(37,99,235,.055) 1px, transparent 1px);
-      background-size: 54px 54px;
-      mask-image: radial-gradient(circle at center, black, transparent 76%);
       z-index: -2;
+      opacity: .52;
+      background-image:
+        linear-gradient(rgba(63,111,85,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(63,111,85,.07) 1px, transparent 1px);
+      background-size: 52px 52px;
+      mask-image: radial-gradient(circle at center, black, transparent 76%);
     }
 
-    body::after {
-      content: "";
+    .grain {
       position: fixed;
       inset: 0;
       pointer-events: none;
-      background: linear-gradient(120deg, transparent, rgba(255,255,255,.55), transparent);
-      opacity: .35;
+      opacity: .18;
       z-index: -1;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.18'/%3E%3C/svg%3E");
     }
 
     a { color: inherit; text-decoration: none; }
     .container { width: min(1160px, calc(100% - 38px)); margin: 0 auto; }
 
-    .noise {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      opacity: .28;
-      z-index: -1;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.12'/%3E%3C/svg%3E");
-    }
-
     nav {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(20px);
-      background: rgba(255,255,255,.72);
+      background: rgba(255, 253, 247, .76);
+      backdrop-filter: blur(18px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav-inner {
-      height: 78px;
+      height: 76px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -98,10 +89,9 @@
       display: flex;
       align-items: center;
       gap: 12px;
-      font-weight: 900;
-      letter-spacing: -0.05em;
       font-size: 20px;
-      font-family: 'Space Grotesk', Inter, sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.045em;
     }
 
     .logo {
@@ -111,8 +101,8 @@
       display: grid;
       place-items: center;
       color: white;
-      background: conic-gradient(from 180deg, var(--purple), var(--blue), var(--cyan), var(--purple));
-      box-shadow: 0 15px 35px rgba(37,99,235,.22);
+      background: linear-gradient(135deg, var(--sage-dark), var(--teal));
+      box-shadow: 0 16px 34px rgba(63,111,85,.24);
     }
 
     .nav-links {
@@ -131,8 +121,8 @@
       bottom: -8px;
       width: 0;
       height: 2px;
-      border-radius: 8px;
-      background: linear-gradient(90deg, var(--purple), var(--blue));
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--sage-dark), var(--teal));
       transition: .25s ease;
     }
     .nav-links a:hover { color: var(--text); }
@@ -146,24 +136,24 @@
       padding: 13px 18px;
       border-radius: 999px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.72);
+      background: rgba(255,253,247,.78);
       color: var(--text);
       font-weight: 900;
       transition: .25s ease;
-      box-shadow: 0 12px 30px rgba(15,23,42,.06);
+      box-shadow: 0 12px 26px rgba(47,61,70,.06);
     }
 
     .btn:hover { transform: translateY(-3px); box-shadow: var(--shadow); }
-    .btn.primary { border: 0; color: #fff; background: linear-gradient(135deg, var(--purple), var(--blue)); }
-    .btn.ghost { background: rgba(255,255,255,.58); }
+    .btn.primary { color: white; border: 0; background: linear-gradient(135deg, var(--sage-dark), var(--teal)); }
+    .btn.secondary { background: rgba(255,253,247,.55); }
 
     .hero {
-      min-height: calc(100vh - 78px);
+      min-height: calc(100vh - 76px);
       display: grid;
-      grid-template-columns: 1.08fr .92fr;
-      align-items: center;
+      grid-template-columns: 1.05fr .95fr;
       gap: 56px;
-      padding: 86px 0 56px;
+      align-items: center;
+      padding: 84px 0 58px;
     }
 
     .pill {
@@ -173,26 +163,26 @@
       gap: 10px;
       padding: 10px 14px;
       border-radius: 999px;
-      border: 1px solid rgba(22,163,74,.20);
-      background: rgba(22,163,74,.08);
-      color: #14532d;
+      border: 1px solid rgba(63,111,85,.22);
+      background: rgba(111,143,114,.12);
+      color: var(--sage-dark);
       font-size: 13px;
       font-weight: 900;
       margin-bottom: 26px;
     }
 
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 18px rgba(22,163,74,.55); }
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--sage-dark); box-shadow: 0 0 18px rgba(63,111,85,.55); }
 
     h1 {
-      font-family: 'Space Grotesk', Inter, sans-serif;
-      font-size: clamp(50px, 7vw, 92px);
+      font-family: 'Playfair Display', Georgia, serif;
+      font-size: clamp(52px, 7vw, 94px);
       line-height: .94;
-      letter-spacing: -0.07em;
-      margin-bottom: 28px;
+      letter-spacing: -0.055em;
+      margin-bottom: 26px;
     }
 
     .gradient {
-      background: linear-gradient(135deg, #121826, var(--purple) 48%, var(--blue));
+      background: linear-gradient(135deg, var(--sage-dark), var(--teal) 50%, var(--clay));
       -webkit-background-clip: text;
       background-clip: text;
       color: transparent;
@@ -201,90 +191,100 @@
     .hero-text {
       color: var(--muted);
       font-size: 18px;
-      line-height: 1.8;
+      line-height: 1.85;
       max-width: 690px;
-      margin-bottom: 34px;
+      margin-bottom: 32px;
     }
 
     .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
 
+    .hero-note {
+      margin-top: 26px;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      max-width: 680px;
+    }
+
+    .note {
+      padding: 14px;
+      border-radius: 20px;
+      background: rgba(255,253,247,.64);
+      border: 1px solid var(--line);
+      color: #52606b;
+      font-size: 13px;
+      font-weight: 800;
+    }
+
     .visual {
       position: relative;
-      min-height: 520px;
+      min-height: 545px;
       display: grid;
       place-items: center;
-      perspective: 1000px;
     }
 
-    .halo {
+    .aura {
       position: absolute;
-      width: 440px;
-      height: 440px;
-      border-radius: 50%;
-      background:
-        radial-gradient(circle, rgba(37,99,235,.20), transparent 64%),
-        conic-gradient(from 120deg, rgba(124,58,237,.24), rgba(37,99,235,.18), rgba(8,145,178,.18), rgba(124,58,237,.24));
-      filter: blur(.2px);
-      animation: float 7s ease-in-out infinite;
+      width: 455px;
+      height: 455px;
+      border-radius: 48% 52% 50% 50%;
+      background: radial-gradient(circle, rgba(111,143,114,.24), transparent 65%), conic-gradient(from 90deg, rgba(111,143,114,.25), rgba(47,143,157,.20), rgba(201,120,84,.17), rgba(111,143,114,.25));
+      animation: breathe 7s ease-in-out infinite;
     }
 
-    @keyframes float { 0%,100% { transform: translateY(0) rotate(0deg); } 50% { transform: translateY(-14px) rotate(8deg); } }
+    @keyframes breathe { 0%,100% { transform: translateY(0) rotate(0deg) scale(.98); } 50% { transform: translateY(-14px) rotate(8deg) scale(1.03); } }
 
-    .command-card {
+    .lab-card {
       position: relative;
-      width: min(450px, 100%);
-      border: 1px solid var(--line);
+      width: min(465px, 100%);
       border-radius: 34px;
-      background: rgba(255,255,255,.72);
-      box-shadow: var(--shadow);
+      border: 1px solid var(--line);
+      background: rgba(255,253,247,.80);
       backdrop-filter: blur(22px);
+      box-shadow: var(--shadow);
       overflow: hidden;
-      transform: rotate(-1.4deg);
+      transform: rotate(-1.2deg);
     }
 
-    .card-top {
+    .lab-top {
       display: flex;
-      gap: 8px;
+      align-items: center;
+      justify-content: space-between;
       padding: 18px 20px;
       border-bottom: 1px solid var(--line);
-      background: rgba(255,255,255,.58);
+      background: rgba(255,255,255,.52);
     }
 
+    .lab-title { font-weight: 900; color: #44515a; font-size: 13px; }
+    .circles { display: flex; gap: 8px; }
     .circle { width: 11px; height: 11px; border-radius: 50%; }
-    .red { background: #fb7185; } .yellow { background: #fbbf24; } .green { background: #34d399; }
+    .red { background: #f59e8b; } .yellow { background: #e9c46a; } .green { background: #7fb685; }
 
-    .terminal {
-      padding: 24px;
-      font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-      font-size: 14px;
-      line-height: 1.9;
-    }
+    .system-map { padding: 26px; display: grid; gap: 18px; }
+    .map-row { display: grid; grid-template-columns: 100px 1fr; gap: 14px; align-items: center; }
+    .map-label { color: var(--muted); font-size: 12px; font-weight: 900; text-transform: uppercase; letter-spacing: .1em; }
+    .map-value { padding: 13px 14px; border-radius: 18px; background: rgba(255,255,255,.62); border: 1px solid var(--line); font-weight: 800; }
 
-    .terminal .k { color: var(--purple); font-weight: 900; }
-    .terminal .v { color: var(--blue); font-weight: 900; }
-    .terminal .c { color: var(--muted); }
-
-    .metric-card {
+    .floating-insight {
       position: absolute;
-      right: -10px;
-      bottom: 54px;
-      width: 240px;
+      right: -8px;
+      bottom: 42px;
+      width: 250px;
       padding: 18px;
-      border-radius: 22px;
+      border-radius: 24px;
       border: 1px solid var(--line);
-      background: rgba(255,255,255,.82);
-      backdrop-filter: blur(18px);
+      background: rgba(255,253,247,.88);
+      backdrop-filter: blur(16px);
       box-shadow: var(--shadow);
     }
-
-    .metric-card strong { display: block; font-size: 15px; margin-bottom: 8px; }
-    .metric-card span { color: var(--muted); font-size: 14px; }
+    .floating-insight strong { display: block; margin-bottom: 8px; }
+    .floating-insight span { color: var(--muted); font-size: 14px; line-height: 1.5; }
 
     .stats {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
       gap: 16px;
-      margin-top: 14px;
+      margin-top: 10px;
     }
 
     .stat, .card {
@@ -292,176 +292,81 @@
       background: var(--card);
       border-radius: var(--radius);
       backdrop-filter: blur(18px);
-      box-shadow: 0 18px 50px rgba(15,23,42,.06);
+      box-shadow: 0 18px 48px rgba(47,61,70,.07);
     }
 
-    .stat {
-      padding: 24px;
-      position: relative;
-      overflow: hidden;
-    }
-
+    .stat { padding: 24px; position: relative; overflow: hidden; }
     .stat::after {
       content: "";
       position: absolute;
-      right: -35px;
-      top: -35px;
-      width: 95px;
-      height: 95px;
+      right: -38px;
+      top: -38px;
+      width: 100px;
+      height: 100px;
       border-radius: 50%;
-      background: rgba(124,58,237,.10);
+      background: rgba(111,143,114,.13);
     }
-
     .stat b { display: block; font-size: 34px; letter-spacing: -0.06em; margin-bottom: 6px; }
     .stat span { color: var(--muted); font-size: 14px; line-height: 1.5; }
 
     section { padding: 96px 0; }
-
-    .section-head {
-      display: flex;
-      justify-content: space-between;
-      align-items: end;
-      gap: 24px;
-      margin-bottom: 34px;
-    }
-
-    .label {
-      color: var(--blue);
-      font-weight: 900;
-      text-transform: uppercase;
-      letter-spacing: .16em;
-      font-size: 13px;
-      margin-bottom: 14px;
-    }
-
-    h2 {
-      font-family: 'Space Grotesk', Inter, sans-serif;
-      font-size: clamp(34px, 5vw, 60px);
-      letter-spacing: -0.06em;
-      line-height: 1.02;
-    }
-
-    .section-head p { color: var(--muted); line-height: 1.7; max-width: 570px; }
+    .section-head { display: flex; justify-content: space-between; align-items: end; gap: 24px; margin-bottom: 34px; }
+    .label { color: var(--sage-dark); font-weight: 900; text-transform: uppercase; letter-spacing: .16em; font-size: 13px; margin-bottom: 14px; }
+    h2 { font-family: 'Playfair Display', Georgia, serif; font-size: clamp(36px, 5vw, 62px); letter-spacing: -0.045em; line-height: 1.02; }
+    .section-head p { color: var(--muted); line-height: 1.75; max-width: 590px; }
     .card { padding: 28px; }
     .card h3 { font-size: 24px; letter-spacing: -0.04em; margin-bottom: 13px; }
     .card p, .card li { color: var(--muted); line-height: 1.75; }
 
-    .about-grid { display: grid; grid-template-columns: .86fr 1.14fr; gap: 20px; }
+    .about-grid { display: grid; grid-template-columns: .82fr 1.18fr; gap: 20px; }
 
-    .signature-card {
-      background: linear-gradient(135deg, rgba(255,255,255,.86), rgba(238,242,255,.76));
-    }
+    .principles { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; margin-top: 18px; }
+    .principle { padding: 16px; border-radius: 20px; border: 1px solid var(--line); background: rgba(255,255,255,.56); text-align: center; font-weight: 900; color: #46545d; font-size: 13px; }
 
-    .process {
-      display: grid;
-      grid-template-columns: repeat(5, 1fr);
-      gap: 12px;
-      margin-top: 18px;
-    }
+    .info-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin-top: 22px; }
+    .mini-info { padding: 20px; border-radius: 24px; border: 1px solid var(--line); background: rgba(255,255,255,.50); }
+    .mini-info b { display: block; margin-bottom: 8px; }
+    .mini-info span { color: var(--muted); font-size: 14px; line-height: 1.6; }
 
-    .process-step {
-      padding: 16px;
-      border-radius: 20px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.58);
-      text-align: center;
-      font-weight: 900;
-      color: #344054;
-      font-size: 13px;
-    }
-
-    .project-grid { display: grid; gap: 22px; }
-    .project {
-      display: grid;
-      grid-template-columns: 340px 1fr;
-      gap: 26px;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .project::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 10% 20%, rgba(124,58,237,.09), transparent 28%);
-      pointer-events: none;
-    }
+    .project-grid { display: grid; gap: 24px; }
+    .project { display: grid; grid-template-columns: 340px 1fr; gap: 26px; align-items: center; position: relative; overflow: hidden; }
+    .project::before { content: ""; position: absolute; inset: 0; background: radial-gradient(circle at 10% 20%, rgba(111,143,114,.11), transparent 28%); pointer-events: none; }
 
     .project-art {
-      min-height: 250px;
+      min-height: 255px;
       border-radius: 24px;
       border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 20% 18%, rgba(124,58,237,.20), transparent 36%),
-        radial-gradient(circle at 80% 80%, rgba(37,99,235,.16), transparent 32%),
-        linear-gradient(135deg, rgba(255,255,255,.85), rgba(238,242,255,.62));
+      background: radial-gradient(circle at 20% 18%, rgba(111,143,114,.20), transparent 36%), radial-gradient(circle at 80% 80%, rgba(47,143,157,.15), transparent 32%), linear-gradient(135deg, rgba(255,253,247,.92), rgba(243,239,230,.62));
       display: grid;
       place-items: center;
       overflow: hidden;
     }
 
-    .pipeline {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      padding: 18px;
-    }
-
-    .node {
-      width: 82px;
-      height: 82px;
-      border-radius: 22px;
-      border: 1px solid var(--line);
-      background: rgba(255,255,255,.72);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font-size: 12px;
-      font-weight: 900;
-      box-shadow: 0 12px 30px rgba(15,23,42,.07);
-    }
-
-    .arrow { color: var(--blue); font-size: 22px; font-weight: 900; }
+    .pipeline { display: flex; gap: 10px; align-items: center; padding: 18px; }
+    .node { width: 82px; height: 82px; border-radius: 22px; border: 1px solid var(--line); background: rgba(255,255,255,.70); display: grid; place-items: center; text-align: center; font-size: 12px; font-weight: 900; box-shadow: 0 12px 30px rgba(47,61,70,.07); }
+    .arrow { color: var(--teal); font-size: 22px; font-weight: 900; }
 
     .tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0; }
-    .tag { padding: 8px 10px; border-radius: 999px; background: rgba(37,99,235,.07); color: #1d4ed8; border: 1px solid rgba(37,99,235,.10); font-size: 12px; font-weight: 900; }
-    .impact { color: var(--green); font-weight: 900; }
+    .tag { padding: 8px 10px; border-radius: 999px; background: rgba(111,143,114,.11); color: var(--sage-dark); border: 1px solid rgba(63,111,85,.10); font-size: 12px; font-weight: 900; }
+    .impact { color: var(--sage-dark); font-weight: 900; }
+
+    .case-meta { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+    .case-meta div { padding: 12px; border-radius: 18px; background: rgba(255,255,255,.50); border: 1px solid var(--line); }
+    .case-meta b { display: block; font-size: 12px; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); margin-bottom: 5px; }
+    .case-meta span { font-weight: 900; font-size: 14px; }
 
     .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-    .skill-icon {
-      width: 54px;
-      height: 54px;
-      border-radius: 18px;
-      display: grid;
-      place-items: center;
-      margin-bottom: 16px;
-      background: linear-gradient(135deg, rgba(124,58,237,.16), rgba(37,99,235,.12));
-      font-size: 23px;
-    }
+    .skill-icon { width: 54px; height: 54px; border-radius: 18px; display: grid; place-items: center; margin-bottom: 16px; background: linear-gradient(135deg, rgba(111,143,114,.16), rgba(47,143,157,.12)); font-size: 23px; }
 
-    .timeline {
-      display: grid;
-      gap: 18px;
-      position: relative;
-    }
-
-    .timeline-card {
-      display: grid;
-      grid-template-columns: 180px 1fr;
-      gap: 20px;
-      position: relative;
-    }
-
-    .date { color: var(--blue); font-weight: 900; }
+    .timeline { display: grid; gap: 18px; }
+    .timeline-card { display: grid; grid-template-columns: 180px 1fr; gap: 20px; }
+    .date { color: var(--sage-dark); font-weight: 900; }
 
     .contact {
       padding: 44px;
       border-radius: 36px;
       border: 1px solid var(--line);
-      background:
-        radial-gradient(circle at 10% 20%, rgba(124,58,237,.16), transparent 32%),
-        linear-gradient(135deg, rgba(255,255,255,.86), rgba(238,242,255,.76));
+      background: radial-gradient(circle at 10% 20%, rgba(111,143,114,.18), transparent 32%), linear-gradient(135deg, rgba(255,253,247,.90), rgba(243,239,230,.78));
       display: grid;
       grid-template-columns: 1fr auto;
       gap: 20px;
@@ -474,38 +379,23 @@
     .reveal { opacity: 0; transform: translateY(24px); transition: .8s ease; }
     .reveal.show { opacity: 1; transform: translateY(0); }
 
-    .marquee {
-      margin-top: 28px;
-      border: 1px solid var(--line);
-      border-radius: 999px;
-      background: rgba(255,255,255,.56);
-      overflow: hidden;
-      white-space: nowrap;
-    }
-
-    .marquee-track {
-      display: inline-block;
-      padding: 13px 0;
-      animation: marquee 22s linear infinite;
-      color: #475467;
-      font-weight: 900;
-    }
-
+    .marquee { margin-top: 28px; border: 1px solid var(--line); border-radius: 999px; background: rgba(255,253,247,.58); overflow: hidden; white-space: nowrap; }
+    .marquee-track { display: inline-block; padding: 13px 0; animation: marquee 24s linear infinite; color: #58666d; font-weight: 900; }
     .marquee-track span { margin: 0 22px; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
 
     @media (max-width: 930px) {
       .nav-links { display: none; }
       .hero, .about-grid, .project, .timeline-card, .contact { grid-template-columns: 1fr; }
-      .stats, .skills-grid { grid-template-columns: repeat(2, 1fr); }
-      .process { grid-template-columns: repeat(2, 1fr); }
+      .stats, .skills-grid, .info-grid { grid-template-columns: repeat(2, 1fr); }
+      .principles { grid-template-columns: repeat(2, 1fr); }
       .visual { min-height: 430px; }
-      .metric-card { right: 16px; }
+      .floating-insight { right: 16px; }
     }
 
     @media (max-width: 560px) {
       .container { width: min(100% - 28px, 1160px); }
-      .stats, .skills-grid, .process { grid-template-columns: 1fr; }
+      .stats, .skills-grid, .info-grid, .principles, .case-meta, .hero-note { grid-template-columns: 1fr; }
       .nav-inner .btn { display: none; }
       h1 { font-size: 48px; }
       .pipeline { transform: scale(.82); }
@@ -516,11 +406,11 @@
 </head>
 
 <body>
-  <div class="noise"></div>
+  <div class="grain"></div>
 
   <nav>
     <div class="container nav-inner">
-      <a href="#home" class="brand"><span class="logo">⌁</span><span>Hanwith</span></a>
+      <a href="#home" class="brand"><span class="logo">HB</span><span>Hanwith Bellamkonda</span></a>
       <div class="nav-links">
         <a href="#about">About</a>
         <a href="#projects">Projects</a>
@@ -535,39 +425,47 @@
   <main id="home" class="container">
     <section class="hero">
       <div class="reveal">
-        <div class="pill"><span class="dot"></span> Senior AI/ML Engineer · Open to C2C</div>
-        <h1>Designing <span class="gradient">AI systems</span> that reason, retrieve, and scale.</h1>
+        <div class="pill"><span class="dot"></span> Senior AI/ML Engineer · GenAI · Agentic AI</div>
+        <h1>Building calm, reliable <span class="gradient">AI systems</span> for complex decisions.</h1>
         <p class="hero-text">
-          I build production-grade GenAI, RAG, agentic AI, and MLOps systems across finance, healthcare, and retail — turning complex data into reliable business decisions.
+          I design production-grade AI/ML platforms that connect data, retrieval, reasoning, deployment, and monitoring. My work spans finance, healthcare, and retail — with a focus on GenAI, RAG, agent workflows, scalable data pipelines, and responsible MLOps.
         </p>
         <div class="hero-actions">
-          <a class="btn primary" href="#projects">Explore Projects →</a>
-          <a class="btn ghost" href="mailto:hanwithh.b@gmail.com">Contact Me ↗</a>
+          <a class="btn primary" href="#projects">View Case Studies →</a>
+          <a class="btn secondary" href="mailto:hanwithh.b@gmail.com">Contact Me ↗</a>
+        </div>
+
+        <div class="hero-note">
+          <div class="note">Production ML</div>
+          <div class="note">LLM + RAG Systems</div>
+          <div class="note">Cloud MLOps</div>
         </div>
 
         <div class="marquee">
           <div class="marquee-track">
-            <span>LLMs</span><span>RAG</span><span>LangGraph</span><span>Databricks</span><span>PySpark</span><span>AWS</span><span>Azure</span><span>MLflow</span><span>Kubernetes</span><span>FastAPI</span>
-            <span>LLMs</span><span>RAG</span><span>LangGraph</span><span>Databricks</span><span>PySpark</span><span>AWS</span><span>Azure</span><span>MLflow</span><span>Kubernetes</span><span>FastAPI</span>
+            <span>Python</span><span>LLMs</span><span>RAG</span><span>LangGraph</span><span>PySpark</span><span>Databricks</span><span>AWS</span><span>Azure</span><span>MLflow</span><span>Kubernetes</span>
+            <span>Python</span><span>LLMs</span><span>RAG</span><span>LangGraph</span><span>PySpark</span><span>Databricks</span><span>AWS</span><span>Azure</span><span>MLflow</span><span>Kubernetes</span>
           </div>
         </div>
       </div>
 
       <div class="visual reveal">
-        <div class="halo"></div>
-        <div class="command-card">
-          <div class="card-top"><span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span></div>
-          <div class="terminal">
-            <div><span class="k">system</span>.<span class="v">role</span> = "Senior AI/ML Engineer"</div>
-            <div><span class="k">focus</span> = ["GenAI", "RAG", "Agentic AI"]</div>
-            <div><span class="k">cloud</span> = ["AWS", "Azure", "Databricks"]</div>
-            <div><span class="k">impact</span> = "faster decisions + scalable ML"</div>
-            <div class="c">// production systems, not just prototypes</div>
+        <div class="aura"></div>
+        <div class="lab-card">
+          <div class="lab-top">
+            <div class="circles"><span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span></div>
+            <div class="lab-title">AI SYSTEM BLUEPRINT</div>
+          </div>
+          <div class="system-map">
+            <div class="map-row"><div class="map-label">Input</div><div class="map-value">Transactions · EHRs · Retail Signals</div></div>
+            <div class="map-row"><div class="map-label">Core</div><div class="map-value">RAG · Agents · ML Models · APIs</div></div>
+            <div class="map-row"><div class="map-label">Platform</div><div class="map-value">Databricks · AWS · Azure · MLflow</div></div>
+            <div class="map-row"><div class="map-label">Output</div><div class="map-value">Insights · Risk Scores · Forecasts</div></div>
           </div>
         </div>
-        <div class="metric-card">
-          <strong>Current Focus</strong>
-          <span>LLM workflows, retrieval quality, MLOps, and production AI reliability.</span>
+        <div class="floating-insight">
+          <strong>Open to C2C Opportunities</strong>
+          <span>AI/ML Engineer · GenAI Engineer · Senior Data Scientist · Texas / Remote</span>
         </div>
       </div>
     </section>
@@ -583,42 +481,48 @@
       <div class="section-head reveal">
         <div>
           <div class="label">About Me</div>
-          <h2>I bridge AI research with production engineering.</h2>
+          <h2>I build AI systems that are useful, explainable, and production-ready.</h2>
         </div>
-        <p>My work sits at the intersection of LLM applications, data platforms, backend systems, cloud infrastructure, and business impact.</p>
+        <p>My strength is connecting advanced AI ideas with practical engineering: clean pipelines, reliable APIs, model monitoring, human review, and measurable business outcomes.</p>
       </div>
 
       <div class="about-grid">
-        <div class="card signature-card reveal">
-          <h3>My Engineering Signature</h3>
-          <p>I like building systems that are usable, measurable, explainable, monitored, and safe enough for real business environments.</p>
-          <div class="process">
-            <div class="process-step">Data</div>
-            <div class="process-step">Retrieval</div>
-            <div class="process-step">Reasoning</div>
-            <div class="process-step">Evaluation</div>
-            <div class="process-step">Deploy</div>
+        <div class="card reveal">
+          <h3>How I Think</h3>
+          <p>I do not treat AI as only a model problem. I look at the full system: data quality, retrieval quality, prompt behavior, evaluation, latency, cost, monitoring, governance, and user trust.</p>
+          <div class="principles">
+            <div class="principle">Data</div>
+            <div class="principle">Retrieval</div>
+            <div class="principle">Reasoning</div>
+            <div class="principle">Evaluation</div>
+            <div class="principle">Deployment</div>
           </div>
         </div>
 
         <div class="card reveal">
-          <h3>What I bring</h3>
+          <h3>What I Bring</h3>
           <ul style="padding-left:20px; display:grid; gap:10px;">
-            <li>End-to-end ML system development from data ingestion to deployment and monitoring.</li>
-            <li>Hands-on GenAI experience with LLMs, RAG pipelines, LangChain, LangGraph, and agentic workflows.</li>
-            <li>Strong production foundation in Python, PySpark, Databricks, AWS, Azure, MLflow, Docker, and Kubernetes.</li>
+            <li>End-to-end ML experience from data ingestion, feature engineering, model training, deployment, and monitoring.</li>
+            <li>Hands-on GenAI experience with LLMs, RAG pipelines, LangChain, LangGraph, hybrid search, reranking, and agent workflows.</li>
+            <li>Strong production foundation in Python, PySpark, Databricks, AWS, Azure, MLflow, Docker, Kubernetes, FastAPI, and SQL databases.</li>
           </ul>
         </div>
+      </div>
+
+      <div class="info-grid reveal">
+        <div class="mini-info"><b>Domains</b><span>Finance, healthcare, life insurance, retail, demand forecasting, fraud monitoring, underwriting support.</span></div>
+        <div class="mini-info"><b>Engineering Style</b><span>Hands-on builder who can write code, design systems, debug issues, document workflows, and collaborate with stakeholders.</span></div>
+        <div class="mini-info"><b>Current Focus</b><span>Production GenAI, context engineering, retrieval quality, agentic workflows, MLOps, observability, and responsible AI.</span></div>
       </div>
     </section>
 
     <section id="projects">
       <div class="section-head reveal">
         <div>
-          <div class="label">Featured Projects</div>
-          <h2>Case studies built for impact.</h2>
+          <div class="label">Featured Case Studies</div>
+          <h2>Enterprise AI projects with real business context.</h2>
         </div>
-        <p>These are simplified portfolio versions of enterprise systems I have worked on across finance, healthcare, and retail domains.</p>
+        <p>These are portfolio-friendly summaries of the systems I have worked on, simplified to highlight problem-solving, architecture, tools, and impact.</p>
       </div>
 
       <div class="project-grid">
@@ -628,10 +532,14 @@
           </div>
           <div>
             <h3>AI-Powered Payment Intelligence System</h3>
-            <p><strong style="color:#7c3aed">Finance · Fraud Monitoring · Visa</strong></p>
+            <p><strong style="color:#3f6f55">Finance · Fraud Monitoring · Visa</strong></p>
             <p>Built an agentic AI workflow using RAG, LangGraph, hybrid search, and reranking to support payment intelligence and fraud investigation workflows.</p>
             <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">Pinecone</span><span class="tag">GPT-4</span><span class="tag">Databricks</span></div>
-            <p><span class="impact">45%</span> efficiency gain through faster contextual investigation and improved auditability.</p>
+            <div class="case-meta">
+              <div><b>Problem</b><span>Manual fraud review</span></div>
+              <div><b>Solution</b><span>Agentic RAG workflow</span></div>
+              <div><b>Impact</b><span>45% efficiency gain</span></div>
+            </div>
           </div>
         </article>
 
@@ -641,10 +549,14 @@
           </div>
           <div>
             <h3>AI-Based Medical Underwriting System</h3>
-            <p><strong style="color:#7c3aed">Healthcare · Life Insurance · USAA</strong></p>
+            <p><strong style="color:#3f6f55">Healthcare · Life Insurance · USAA</strong></p>
             <p>Developed an LLM-powered workflow to analyze fragmented clinical records, extract medical entities, and support explainable underwriting decisions.</p>
             <div class="tags"><span class="tag">BioBERT</span><span class="tag">LLMs</span><span class="tag">SHAP</span><span class="tag">AWS</span><span class="tag">SageMaker</span><span class="tag">PySpark</span></div>
-            <p><span class="impact">75%</span> faster processing and <span class="impact">40%</span> reduction in coding errors.</p>
+            <div class="case-meta">
+              <div><b>Problem</b><span>Slow medical review</span></div>
+              <div><b>Solution</b><span>NLP + LLM workflow</span></div>
+              <div><b>Impact</b><span>75% faster processing</span></div>
+            </div>
           </div>
         </article>
 
@@ -654,10 +566,14 @@
           </div>
           <div>
             <h3>Retail Demand Forecasting Engine</h3>
-            <p><strong style="color:#7c3aed">Retail · Forecasting · EY</strong></p>
+            <p><strong style="color:#3f6f55">Retail · Forecasting · EY</strong></p>
             <p>Designed forecasting pipelines using time-series models, gradient boosting, and Databricks ETL workflows to improve inventory and planning decisions.</p>
             <div class="tags"><span class="tag">LSTM</span><span class="tag">XGBoost</span><span class="tag">PySpark</span><span class="tag">Azure</span><span class="tag">Power BI</span></div>
-            <p><span class="impact">18%</span> lower inventory carrying costs and approx. <span class="impact">$0.96M</span> quarterly ROI impact.</p>
+            <div class="case-meta">
+              <div><b>Problem</b><span>Demand uncertainty</span></div>
+              <div><b>Solution</b><span>Hybrid forecasting</span></div>
+              <div><b>Impact</b><span>$0.96M quarterly ROI</span></div>
+            </div>
           </div>
         </article>
       </div>
@@ -666,16 +582,17 @@
     <section id="skills">
       <div class="section-head reveal">
         <div>
-          <div class="label">Tech Stack</div>
-          <h2>Modern AI engineering stack.</h2>
+          <div class="label">Technical Toolkit</div>
+          <h2>A practical stack for modern AI engineering.</h2>
         </div>
+        <p>My toolkit covers model development, data processing, cloud deployment, backend APIs, monitoring, governance, and collaboration.</p>
       </div>
 
       <div class="skills-grid">
-        <div class="card reveal"><div class="skill-icon">🧠</div><h3>AI / GenAI</h3><p>LLMs, RAG, LangChain, LangGraph, Agentic AI, Prompt Engineering, PEFT/QLoRA</p></div>
-        <div class="card reveal"><div class="skill-icon">⚙️</div><h3>ML / Data</h3><p>Python, PyTorch, TensorFlow, Scikit-learn, PySpark, Pandas, NumPy</p></div>
-        <div class="card reveal"><div class="skill-icon">☁️</div><h3>Cloud / MLOps</h3><p>AWS, Azure, Databricks, MLflow, Docker, Kubernetes, CI/CD</p></div>
-        <div class="card reveal"><div class="skill-icon">🗄️</div><h3>Backend / Data</h3><p>SQL, Snowflake, MongoDB, PostgreSQL, FastAPI, Django, REST APIs</p></div>
+        <div class="card reveal"><div class="skill-icon">🧠</div><h3>AI / GenAI</h3><p>LLMs, RAG, LangChain, LangGraph, Agentic AI, Prompt Engineering, PEFT/QLoRA, Guardrails</p></div>
+        <div class="card reveal"><div class="skill-icon">⚙️</div><h3>ML / Data</h3><p>Python, PyTorch, TensorFlow, Scikit-learn, XGBoost, PySpark, Pandas, NumPy</p></div>
+        <div class="card reveal"><div class="skill-icon">☁️</div><h3>Cloud / MLOps</h3><p>AWS, Azure, Databricks, MLflow, Docker, Kubernetes, CI/CD, Prometheus, Grafana</p></div>
+        <div class="card reveal"><div class="skill-icon">🗄️</div><h3>Backend / Data</h3><p>SQL, Snowflake, MongoDB, PostgreSQL, FastAPI, Django, REST APIs, Kafka, Redis</p></div>
       </div>
     </section>
 
@@ -685,13 +602,14 @@
           <div class="label">Experience</div>
           <h2>From Python engineering to senior AI systems.</h2>
         </div>
+        <p>A career path across backend engineering, data science, machine learning, and enterprise GenAI systems.</p>
       </div>
 
       <div class="timeline">
-        <div class="card timeline-card reveal"><div class="date">2025 — Present</div><div><h3>Senior AI/ML Engineer · Visa</h3><p>Building GenAI and agentic AI systems for payment intelligence, fraud monitoring, and regulatory analysis.</p></div></div>
-        <div class="card timeline-card reveal"><div class="date">2021 — 2023</div><div><h3>Machine Learning Engineer · USAA</h3><p>Developed AI-assisted underwriting systems using LLMs, clinical NLP, explainability, and HIPAA-compliant ML pipelines.</p></div></div>
-        <div class="card timeline-card reveal"><div class="date">2018 — 2021</div><div><h3>Data Scientist · EY</h3><p>Built forecasting, segmentation, and analytics systems for retail demand planning and supply chain optimization.</p></div></div>
-        <div class="card timeline-card reveal"><div class="date">2017 — 2018</div><div><h3>Python Developer · Pine Labs</h3><p>Worked on backend systems, APIs, microservices, automation, testing, and CI/CD pipelines.</p></div></div>
+        <div class="card timeline-card reveal"><div class="date">2025 — Present</div><div><h3>Senior AI/ML Engineer · Visa</h3><p>Building GenAI and agentic AI systems for payment intelligence, fraud monitoring, regulatory analysis, and scalable ML lifecycle management.</p></div></div>
+        <div class="card timeline-card reveal"><div class="date">2021 — 2023</div><div><h3>Machine Learning Engineer · USAA</h3><p>Developed AI-assisted underwriting systems using LLM workflows, clinical NLP, explainability, HIPAA-compliant data pipelines, and AWS-based MLOps.</p></div></div>
+        <div class="card timeline-card reveal"><div class="date">2018 — 2021</div><div><h3>Data Scientist · EY</h3><p>Built forecasting, segmentation, A/B testing, and analytics systems for retail demand planning and supply chain optimization.</p></div></div>
+        <div class="card timeline-card reveal"><div class="date">2017 — 2018</div><div><h3>Python Developer · Pine Labs</h3><p>Worked on backend systems, REST APIs, SOAP-to-microservice migration, automation, testing, SQL optimization, and CI/CD pipelines.</p></div></div>
       </div>
     </section>
 
@@ -699,8 +617,8 @@
       <div class="contact reveal">
         <div>
           <div class="label">Contact</div>
-          <h2>Let’s build something intelligent.</h2>
-          <p style="color:var(--muted); margin-top:14px; line-height:1.7;">Open to AI/ML Engineer, GenAI Engineer, Data Scientist, and C2C opportunities.</p>
+          <h2>Let’s build something intelligent and reliable.</h2>
+          <p style="color:var(--muted); margin-top:14px; line-height:1.7;">Open to AI/ML Engineer, GenAI Engineer, Senior Data Scientist, and C2C opportunities.</p>
         </div>
         <a class="btn primary" href="mailto:hanwithh.b@gmail.com">Get In Touch →</a>
       </div>
