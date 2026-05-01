@@ -1,27 +1,532 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Hanwith Bellamkonda | AI/ML Engineer</title>
+  <meta name="description" content="Hanwith Bellamkonda - Senior AI/ML Engineer specializing in GenAI, Agentic AI, RAG, MLOps, and scalable AI systems." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050816;
+      --card: rgba(255,255,255,0.07);
+      --card2: rgba(255,255,255,0.11);
+      --line: rgba(255,255,255,0.13);
+      --text: #f8fafc;
+      --muted: #a7b0cc;
+      --blue: #3b82f6;
+      --purple: #8b5cf6;
+      --cyan: #22d3ee;
+      --green: #22c55e;
+      --pink: #ec4899;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: Inter, Arial, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at 20% 10%, rgba(139,92,246,.28), transparent 28%),
+        radial-gradient(circle at 85% 18%, rgba(59,130,246,.22), transparent 32%),
+        radial-gradient(circle at 50% 100%, rgba(34,211,238,.13), transparent 30%),
+        var(--bg);
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      background-image:
+        linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.035) 1px, transparent 1px);
+      background-size: 58px 58px;
+      mask-image: radial-gradient(circle at center, black, transparent 75%);
+      z-index: -1;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1150px, calc(100% - 38px)); margin: 0 auto; }
+
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(18px);
+      background: rgba(5,8,22,.72);
+      border-bottom: 1px solid var(--line);
+    }
+
+    .nav-inner {
+      height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 20px;
+      font-weight: 900;
+      letter-spacing: -0.04em;
+    }
+
+    .logo {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, var(--purple), var(--blue));
+      box-shadow: 0 0 40px rgba(139,92,246,.45);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 26px;
+      color: var(--muted);
+      font-size: 14px;
+      font-weight: 700;
+    }
+
+    .nav-links a:hover { color: white; }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      padding: 13px 18px;
+      border-radius: 999px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.07);
+      color: white;
+      font-weight: 800;
+      transition: .25s ease;
+    }
+
+    .btn:hover { transform: translateY(-2px); background: rgba(255,255,255,.12); }
+    .btn.primary { border: 0; background: linear-gradient(135deg, var(--purple), var(--blue)); box-shadow: 0 18px 50px rgba(59,130,246,.28); }
+
+    .hero {
+      min-height: calc(100vh - 76px);
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      align-items: center;
+      gap: 54px;
+      padding: 74px 0 50px;
+    }
+
+    .pill {
+      width: fit-content;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 14px;
+      border-radius: 999px;
+      border: 1px solid rgba(34,197,94,.28);
+      background: rgba(34,197,94,.09);
+      color: #dcfce7;
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 26px;
+    }
+
+    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 18px var(--green); }
+
+    h1 {
+      font-size: clamp(48px, 7vw, 88px);
+      line-height: .98;
+      letter-spacing: -0.075em;
+      margin-bottom: 28px;
+    }
+
+    .gradient {
+      background: linear-gradient(135deg, #fff, #a78bfa 45%, #22d3ee);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    .hero-text {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 680px;
+      margin-bottom: 34px;
+    }
+
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .visual {
+      position: relative;
+      min-height: 500px;
+      display: grid;
+      place-items: center;
+    }
+
+    .orb {
+      position: absolute;
+      width: 420px;
+      height: 420px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 45% 45%, rgba(59,130,246,.9), rgba(139,92,246,.42), transparent 70%);
+      animation: pulse 5s ease-in-out infinite;
+    }
+
+    @keyframes pulse { 0%,100% { transform: scale(.98); opacity: .85; } 50% { transform: scale(1.04); opacity: 1; } }
+
+    .hero-card {
+      position: relative;
+      width: min(420px, 100%);
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 34px;
+      background: linear-gradient(180deg, rgba(255,255,255,.13), rgba(255,255,255,.04));
+      box-shadow: 0 30px 90px rgba(0,0,0,.42);
+      backdrop-filter: blur(18px);
+    }
+
+    .avatar {
+      height: 310px;
+      border-radius: 26px;
+      border: 1px solid var(--line);
+      display: grid;
+      place-items: center;
+      background: radial-gradient(circle at 50% 0%, rgba(34,211,238,.22), transparent 42%), linear-gradient(135deg, rgba(139,92,246,.30), rgba(59,130,246,.16));
+      font-size: 84px;
+      font-weight: 900;
+      letter-spacing: -0.08em;
+    }
+
+    .mini-card {
+      position: absolute;
+      right: -8px;
+      bottom: 62px;
+      width: 235px;
+      padding: 18px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: rgba(8,13,31,.9);
+      backdrop-filter: blur(16px);
+      box-shadow: 0 25px 70px rgba(0,0,0,.45);
+    }
+
+    .mini-card strong { display: block; margin-bottom: 8px; }
+    .mini-card span { color: var(--muted); font-size: 14px; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .stat, .card {
+      border: 1px solid var(--line);
+      background: var(--card);
+      border-radius: 24px;
+      backdrop-filter: blur(16px);
+      box-shadow: 0 20px 60px rgba(0,0,0,.18);
+    }
+
+    .stat { padding: 24px; }
+    .stat b { display: block; font-size: 32px; letter-spacing: -0.06em; margin-bottom: 6px; }
+    .stat span { color: var(--muted); font-size: 14px; }
+
+    section { padding: 92px 0; }
+
+    .section-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: 24px;
+      margin-bottom: 34px;
+    }
+
+    .label {
+      color: #8da2ff;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      font-size: 13px;
+      margin-bottom: 14px;
+    }
+
+    h2 { font-size: clamp(34px, 5vw, 58px); letter-spacing: -0.06em; line-height: 1.05; }
+    .section-head p { color: var(--muted); line-height: 1.7; max-width: 560px; }
+
+    .about-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 20px; }
+    .card { padding: 28px; }
+    .card h3 { font-size: 24px; letter-spacing: -0.04em; margin-bottom: 13px; }
+    .card p, .card li { color: var(--muted); line-height: 1.75; }
+
+    .project-grid { display: grid; gap: 22px; }
+    .project { display: grid; grid-template-columns: 330px 1fr; gap: 26px; align-items: center; }
+
+    .project-art {
+      min-height: 240px;
+      border-radius: 22px;
+      border: 1px solid var(--line);
+      background: radial-gradient(circle at 20% 20%, rgba(139,92,246,.38), transparent 36%), linear-gradient(135deg, rgba(59,130,246,.20), rgba(255,255,255,.04));
+      display: grid;
+      place-items: center;
+      overflow: hidden;
+    }
+
+    .pipeline { display: flex; gap: 12px; align-items: center; padding: 18px; }
+    .node {
+      width: 82px;
+      height: 82px;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      background: rgba(0,0,0,.22);
+      display: grid;
+      place-items: center;
+      text-align: center;
+      font-size: 12px;
+      font-weight: 900;
+    }
+    .arrow { color: var(--cyan); font-size: 24px; }
+
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin: 18px 0; }
+    .tag { padding: 8px 10px; border-radius: 999px; background: rgba(255,255,255,.08); color: #d9def7; border: 1px solid rgba(255,255,255,.08); font-size: 12px; font-weight: 800; }
+    .impact { color: #86efac; font-weight: 900; }
+
+    .skills-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
+    .skill-icon { width: 52px; height: 52px; border-radius: 17px; display: grid; place-items: center; margin-bottom: 16px; background: linear-gradient(135deg, rgba(139,92,246,.36), rgba(59,130,246,.16)); }
+
+    .timeline { display: grid; gap: 18px; }
+    .timeline-card { display: grid; grid-template-columns: 180px 1fr; gap: 20px; }
+    .date { color: var(--cyan); font-weight: 900; }
+
+    .contact {
+      padding: 42px;
+      border-radius: 34px;
+      border: 1px solid var(--line);
+      background: linear-gradient(135deg, rgba(139,92,246,.20), rgba(59,130,246,.10));
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 20px;
+      align-items: center;
+    }
+
+    footer { color: var(--muted); text-align: center; padding: 34px 0 54px; }
+
+    .reveal { opacity: 0; transform: translateY(24px); transition: .8s ease; }
+    .reveal.show { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hero, .about-grid, .project, .timeline-card, .contact { grid-template-columns: 1fr; }
+      .stats, .skills-grid { grid-template-columns: repeat(2, 1fr); }
+      .visual { min-height: 420px; }
+      .mini-card { right: 18px; }
+    }
+
+    @media (max-width: 540px) {
+      .container { width: min(100% - 28px, 1150px); }
+      .stats, .skills-grid { grid-template-columns: 1fr; }
+      .nav-inner .btn { display: none; }
+      .pipeline { transform: scale(.82); }
+      h1 { font-size: 48px; }
+    }
+  </style>
 </head>
 
-<body style="font-family: Arial; background:#0f172a; color:white; padding:40px;">
+<body>
+  <nav>
+    <div class="container nav-inner">
+      <a href="#home" class="brand"><span class="logo">⌁</span><span>Hanwith</span></a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#experience">Experience</a>
+        <a href="#contact">Contact</a>
+      </div>
+      <a class="btn" href="resume.pdf" target="_blank">Resume ↓</a>
+    </div>
+  </nav>
 
-<h1>Hanwith Bellamkonda</h1>
-<p>Senior AI/ML Engineer | Generative AI | Agentic AI</p>
+  <main id="home" class="container">
+    <section class="hero">
+      <div class="reveal">
+        <div class="pill"><span class="dot"></span> Senior AI/ML Engineer · Open to C2C</div>
+        <h1>Building <span class="gradient">intelligent systems</span> that turn data into decisions.</h1>
+        <p class="hero-text">
+          I design and deploy production-grade AI/ML systems across finance, healthcare, and retail — specializing in Generative AI, RAG pipelines, agentic workflows, and scalable MLOps.
+        </p>
+        <div class="hero-actions">
+          <a class="btn primary" href="#projects">View My Work →</a>
+          <a class="btn" href="mailto:hanwithh.b@gmail.com">Let’s Connect ↗</a>
+        </div>
+      </div>
 
-<h2>About Me</h2>
-<p>8+ years building AI systems across finance, healthcare, and retail.</p>
+      <div class="visual reveal">
+        <div class="orb"></div>
+        <div class="hero-card">
+          <div class="avatar">HB</div>
+          <div style="margin-top:18px; display:flex; justify-content:space-between; gap:14px; align-items:center;">
+            <div>
+              <strong>GenAI · RAG · Agentic AI</strong>
+              <p style="margin-top:7px; color:var(--muted); line-height:1.5; font-size:14px;">Production systems, not prototypes.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mini-card">
+          <strong>Available for C2C</strong>
+          <span>Texas, USA · AI/ML · Data Science</span>
+        </div>
+      </div>
+    </section>
 
-<h2>Projects</h2>
+    <div class="stats reveal">
+      <div class="stat"><b>8+</b><span>Years of Experience</span></div>
+      <div class="stat"><b>15+</b><span>AI/ML Systems Delivered</span></div>
+      <div class="stat"><b>3</b><span>Domains: Finance, Healthcare, Retail</span></div>
+      <div class="stat"><b>$1M+</b><span>Business Impact Influenced</span></div>
+    </div>
 
-<h3>Visa - Payment Intelligence System</h3>
-<p>Built RAG + Agentic AI system for fraud detection (45% faster)</p>
+    <section id="about">
+      <div class="section-head reveal">
+        <div>
+          <div class="label">About Me</div>
+          <h2>Engineer. Problem Solver. AI Builder.</h2>
+        </div>
+        <p>I combine ML, data engineering, backend systems, and MLOps to create reliable AI systems that work in real production environments.</p>
+      </div>
 
-<h3>USAA - AI Underwriting</h3>
-<p>LLM-based system for medical analysis (75% faster)</p>
+      <div class="about-grid">
+        <div class="card reveal">
+          <h3>What I Do</h3>
+          <p>I build LLM-powered systems, agent workflows, retrieval pipelines, ML models, data pipelines, APIs, and deployment frameworks that help teams make faster and more accurate decisions.</p>
+        </div>
+        <div class="card reveal">
+          <h3>Core Strengths</h3>
+          <ul style="padding-left:20px; display:grid; gap:10px;">
+            <li>Generative AI systems using LLMs, RAG, LangChain, and LangGraph</li>
+            <li>Production ML pipelines using Databricks, PySpark, MLflow, AWS, and Azure</li>
+            <li>Explainable, monitored, and reliable AI systems for regulated industries</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<h2>Skills</h2>
-<p>Python | LLMs | RAG | LangChain | Databricks | AWS | Azure</p>
+    <section id="projects">
+      <div class="section-head reveal">
+        <div>
+          <div class="label">Featured Projects</div>
+          <h2>Selected AI Systems</h2>
+        </div>
+        <p>Enterprise AI systems focused on decision intelligence, automation, retrieval, explainability, and measurable business impact.</p>
+      </div>
 
+      <div class="project-grid">
+        <article class="card project reveal">
+          <div class="project-art">
+            <div class="pipeline"><div class="node">Data<br>Sources</div><div class="arrow">→</div><div class="node">RAG<br>Pipeline</div><div class="arrow">→</div><div class="node">LLM<br>Agent</div></div>
+          </div>
+          <div>
+            <h3>AI-Powered Payment Intelligence System</h3>
+            <p><strong style="color:#a78bfa">Finance · Visa</strong></p>
+            <p>Built an agentic AI workflow using RAG, LangGraph, and hybrid retrieval to support fraud investigation and payment intelligence analysis.</p>
+            <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">Pinecone</span><span class="tag">GPT-4</span><span class="tag">Databricks</span></div>
+            <p><span class="impact">45%</span> reduction in investigation time through faster contextual analysis.</p>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-art">
+            <div class="pipeline"><div class="node">EHR<br>Notes</div><div class="arrow">→</div><div class="node">BioBERT<br>NER</div><div class="arrow">→</div><div class="node">Risk<br>Score</div></div>
+          </div>
+          <div>
+            <h3>AI-Based Medical Underwriting System</h3>
+            <p><strong style="color:#a78bfa">Healthcare · USAA</strong></p>
+            <p>Developed an LLM-powered workflow to analyze fragmented clinical records, extract medical entities, and improve underwriting decision support.</p>
+            <div class="tags"><span class="tag">BioBERT</span><span class="tag">LLMs</span><span class="tag">SHAP</span><span class="tag">AWS</span><span class="tag">SageMaker</span><span class="tag">PySpark</span></div>
+            <p><span class="impact">75%</span> faster processing and <span class="impact">40%</span> reduction in coding errors.</p>
+          </div>
+        </article>
+
+        <article class="card project reveal">
+          <div class="project-art">
+            <div class="pipeline"><div class="node">Sales<br>Data</div><div class="arrow">→</div><div class="node">Forecast<br>Models</div><div class="arrow">→</div><div class="node">Supply<br>Planning</div></div>
+          </div>
+          <div>
+            <h3>Retail Demand Forecasting Engine</h3>
+            <p><strong style="color:#a78bfa">Retail · EY</strong></p>
+            <p>Designed forecasting pipelines using time-series models, gradient boosting, and Databricks ETL workflows to improve inventory and planning decisions.</p>
+            <div class="tags"><span class="tag">LSTM</span><span class="tag">XGBoost</span><span class="tag">PySpark</span><span class="tag">Azure</span><span class="tag">Power BI</span></div>
+            <p><span class="impact">18%</span> reduction in inventory carrying costs and approximately <span class="impact">$0.96M</span> quarterly ROI impact.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="skills">
+      <div class="section-head reveal">
+        <div>
+          <div class="label">Tech Stack</div>
+          <h2>Tools I Use</h2>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <div class="card reveal"><div class="skill-icon">🧠</div><h3>AI / GenAI</h3><p>LLMs, RAG, LangChain, LangGraph, Agentic AI, Prompt Engineering</p></div>
+        <div class="card reveal"><div class="skill-icon">⚙️</div><h3>ML / Data</h3><p>Python, PyTorch, TensorFlow, Scikit-learn, PySpark, Pandas, NumPy</p></div>
+        <div class="card reveal"><div class="skill-icon">☁️</div><h3>Cloud / MLOps</h3><p>AWS, Azure, Databricks, MLflow, Docker, Kubernetes, CI/CD</p></div>
+        <div class="card reveal"><div class="skill-icon">🗄️</div><h3>Backend / Data</h3><p>SQL, Snowflake, MongoDB, PostgreSQL, FastAPI, Django, REST APIs</p></div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <div class="section-head reveal">
+        <div>
+          <div class="label">Experience</div>
+          <h2>Career Journey</h2>
+        </div>
+      </div>
+
+      <div class="timeline">
+        <div class="card timeline-card reveal"><div class="date">2025 — Present</div><div><h3>Senior AI/ML Engineer · Visa</h3><p>Building GenAI and agentic AI systems for payment intelligence, fraud monitoring, and regulatory analysis.</p></div></div>
+        <div class="card timeline-card reveal"><div class="date">2021 — 2023</div><div><h3>Machine Learning Engineer · USAA</h3><p>Developed AI-assisted underwriting systems using LLMs, clinical NLP, explainability, and HIPAA-compliant ML pipelines.</p></div></div>
+        <div class="card timeline-card reveal"><div class="date">2018 — 2021</div><div><h3>Data Scientist · EY</h3><p>Built forecasting, segmentation, and analytics systems for retail demand planning and supply chain optimization.</p></div></div>
+        <div class="card timeline-card reveal"><div class="date">2017 — 2018</div><div><h3>Python Developer · Pine Labs</h3><p>Worked on backend systems, APIs, microservices, automation, testing, and CI/CD pipelines.</p></div></div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="contact reveal">
+        <div>
+          <div class="label">Contact</div>
+          <h2>Let’s build something intelligent.</h2>
+          <p style="color:var(--muted); margin-top:14px; line-height:1.7;">Open to AI/ML Engineer, GenAI Engineer, Data Scientist, and C2C opportunities.</p>
+        </div>
+        <a class="btn primary" href="mailto:hanwithh.b@gmail.com">Get In Touch →</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>© 2026 Hanwith Bellamkonda. Built with HTML, CSS, and JavaScript.</footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) entry.target.classList.add('show');
+      });
+    }, { threshold: 0.12 });
+
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+  </script>
 </body>
 </html>
