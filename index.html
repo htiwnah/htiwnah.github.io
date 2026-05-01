@@ -1,595 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hanwith Bellamkonda | AI/ML Engineer</title>
-  <meta name="description" content="Portfolio of Hanwith Bellamkonda, Senior AI/ML Engineer specializing in GenAI, Agentic AI, RAG, MLOps, and scalable AI systems." />
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #fbfbf8;
-      --surface: #ffffff;
-      --surface-soft: #f2f4ef;
-      --text: #17211d;
-      --muted: #66736d;
-      --line: #e4e8df;
-      --green: #2f6f55;
-      --green-soft: #e9f3ee;
-      --blue: #2d6cdf;
-      --blue-soft: #edf3ff;
-      --sand: #f4ead9;
-      --clay: #b87552;
-      --shadow: 0 24px 70px rgba(31, 46, 39, 0.08);
-      --radius: 26px;
-    }
-
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      font-family: Inter, Arial, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at 12% 8%, rgba(47, 111, 85, .10), transparent 28%),
-        radial-gradient(circle at 90% 10%, rgba(45, 108, 223, .09), transparent 30%),
-        linear-gradient(180deg, #fff 0%, var(--bg) 100%);
-      overflow-x: hidden;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    .container { width: min(1120px, calc(100% - 40px)); margin: 0 auto; }
-
-    nav {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(251, 251, 248, .86);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav-inner {
-      height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 900;
-      letter-spacing: -0.04em;
-      font-size: 19px;
-    }
-
-    .brand-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      background: var(--green);
-      color: white;
-      display: grid;
-      place-items: center;
-      font-weight: 900;
-    }
-
-    .nav-links {
-      display: flex;
-      gap: 26px;
-      color: var(--muted);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .nav-links a:hover { color: var(--green); }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      padding: 12px 17px;
-      border-radius: 999px;
-      border: 1px solid var(--line);
-      background: var(--surface);
-      color: var(--text);
-      font-weight: 800;
-      transition: .2s ease;
-    }
-
-    .btn:hover { transform: translateY(-2px); box-shadow: var(--shadow); }
-    .btn.primary { background: var(--green); color: white; border-color: var(--green); }
-
-    .hero {
-      padding: 96px 0 70px;
-      display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 58px;
-      align-items: center;
-    }
-
-    .status {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      padding: 9px 13px;
-      border-radius: 999px;
-      background: var(--green-soft);
-      color: var(--green);
-      border: 1px solid #d5e7dc;
-      font-weight: 800;
-      font-size: 13px;
-      margin-bottom: 28px;
-    }
-
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); }
-
-    h1 {
-      font-size: clamp(48px, 7vw, 86px);
-      line-height: .98;
-      letter-spacing: -0.075em;
-      margin-bottom: 26px;
-    }
-
-    .highlight { color: var(--green); }
-
-    .hero-text {
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.85;
-      max-width: 680px;
-      margin-bottom: 32px;
-    }
-
-    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
-
-    .quick-stack {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 30px;
-    }
-
-    .chip {
-      padding: 9px 12px;
-      border-radius: 999px;
-      background: var(--surface);
-      border: 1px solid var(--line);
-      color: #3f4d47;
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .hero-panel {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 32px;
-      padding: 28px;
-      box-shadow: var(--shadow);
-    }
-
-    .panel-title {
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: 12px;
-      font-weight: 900;
-      margin-bottom: 20px;
-    }
-
-    .system-flow { display: grid; gap: 14px; }
-
-    .flow-item {
-      display: grid;
-      grid-template-columns: 42px 1fr;
-      gap: 14px;
-      align-items: start;
-      padding: 16px;
-      border: 1px solid var(--line);
-      border-radius: 20px;
-      background: #fcfcfa;
-    }
-
-    .flow-icon {
-      width: 42px;
-      height: 42px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: var(--green-soft);
-    }
-
-    .flow-item h3 { font-size: 16px; margin-bottom: 5px; }
-    .flow-item p { color: var(--muted); line-height: 1.6; font-size: 14px; }
-
-    .metrics {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-      margin-top: 26px;
-    }
-
-    .metric {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      padding: 22px;
-    }
-
-    .metric b { display: block; font-size: 30px; letter-spacing: -0.06em; margin-bottom: 6px; }
-    .metric span { color: var(--muted); font-size: 14px; line-height: 1.5; }
-
-    section { padding: 82px 0; }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 24px;
-      align-items: end;
-      margin-bottom: 30px;
-    }
-
-    .label {
-      color: var(--green);
-      text-transform: uppercase;
-      letter-spacing: .15em;
-      font-size: 13px;
-      font-weight: 900;
-      margin-bottom: 12px;
-    }
-
-    h2 {
-      font-size: clamp(34px, 5vw, 56px);
-      letter-spacing: -0.06em;
-      line-height: 1.04;
-    }
-
-    .section-head p { color: var(--muted); line-height: 1.8; }
-
-    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; }
-    .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-    .grid-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: 18px; }
-
-    .card {
-      background: var(--surface);
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      padding: 26px;
-      box-shadow: 0 14px 45px rgba(31,46,39,.045);
-    }
-
-    .card h3 { font-size: 22px; letter-spacing: -0.04em; margin-bottom: 12px; }
-    .card p, .card li { color: var(--muted); line-height: 1.75; }
-
-    .resume-summary ul { padding-left: 20px; display: grid; gap: 10px; }
-
-    .project {
-      display: grid;
-      grid-template-columns: .78fr 1.22fr;
-      gap: 22px;
-      align-items: stretch;
-    }
-
-    .project-visual {
-      min-height: 250px;
-      border-radius: 22px;
-      background: linear-gradient(135deg, var(--green-soft), var(--blue-soft));
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      padding: 22px;
-    }
-
-    .mini-flow {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-
-    .node {
-      width: 82px;
-      height: 82px;
-      border-radius: 20px;
-      background: rgba(255,255,255,.76);
-      border: 1px solid var(--line);
-      display: grid;
-      place-items: center;
-      text-align: center;
-      font-weight: 900;
-      font-size: 12px;
-      color: #33443b;
-    }
-
-    .arrow { color: var(--green); font-weight: 900; }
-
-    .tags {
-      display: flex;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin: 16px 0;
-    }
-
-    .tag {
-      padding: 8px 10px;
-      border-radius: 999px;
-      background: var(--green-soft);
-      color: var(--green);
-      font-size: 12px;
-      font-weight: 800;
-    }
-
-    .impact-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .impact-box {
-      padding: 14px;
-      border-radius: 18px;
-      background: #fcfcfa;
-      border: 1px solid var(--line);
-    }
-
-    .impact-box small { display: block; color: var(--muted); font-weight: 800; text-transform: uppercase; letter-spacing: .08em; margin-bottom: 6px; font-size: 11px; }
-    .impact-box b { color: var(--text); font-size: 14px; }
-
-    .timeline { display: grid; gap: 14px; }
-
-    .timeline-card {
-      display: grid;
-      grid-template-columns: 170px 1fr;
-      gap: 20px;
-      align-items: start;
-    }
-
-    .date { color: var(--green); font-weight: 900; }
-
-    .skills-list {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-    }
-
-    .skill-pill {
-      padding: 10px 12px;
-      border-radius: 999px;
-      background: #fcfcfa;
-      border: 1px solid var(--line);
-      color: #33443b;
-      font-weight: 700;
-      font-size: 13px;
-    }
-
-    .contact-card {
-      background: linear-gradient(135deg, #ffffff, var(--green-soft));
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 20px;
-      align-items: center;
-    }
-
-    footer { text-align: center; color: var(--muted); padding: 30px 0 50px; }
-
-    .reveal { opacity: 0; transform: translateY(18px); transition: .7s ease; }
-    .reveal.show { opacity: 1; transform: translateY(0); }
-
-    @media (max-width: 920px) {
-      .nav-links { display: none; }
-      .hero, .section-head, .grid-2, .grid-3, .grid-4, .project, .timeline-card, .contact-card { grid-template-columns: 1fr; }
-      .metrics { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 560px) {
-      .container { width: min(100% - 28px, 1120px); }
-      .metrics, .impact-row, .hero-note { grid-template-columns: 1fr; }
-      .nav-inner .btn { display: none; }
-      h1 { font-size: 46px; }
-      section { padding: 66px 0; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hanwith Bellamkonda | Senior AI/ML Engineer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
+        .gradient-text {
+            background: linear-gradient(to right, #60a5fa, #a78bfa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .card { background-color: #1e293b; border: 1px solid #334155; transition: transform 0.2s; }
+        .card:hover { transform: translateY(-5px); border-color: #60a5fa; }
+    </script>
 </head>
-<body>
-  <nav>
-    <div class="container nav-inner">
-      <a href="#home" class="brand"><span class="brand-mark">HB</span><span>Hanwith</span></a>
-      <div class="nav-links">
-        <a href="#about">About</a>
-        <a href="#projects">Projects</a>
-        <a href="#experience">Experience</a>
-        <a href="#skills">Skills</a>
-        <a href="#contact">Contact</a>
-      </div>
-      <a class="btn" href="resume.pdf" target="_blank">Resume ↓</a>
-    </div>
-  </nav>
+<body class="px-6 md:px-24 py-12">
 
-  <main id="home" class="container">
-    <section class="hero">
-      <div class="reveal">
-        <div class="status"><span class="dot"></span> Senior AI/ML Engineer · GenAI & Agentic AI</div>
-        <h1>I build <span class="highlight">AI systems</span> that move from idea to production.</h1>
-        <p class="hero-text">
-          8+ years of experience across AI/ML, data science, and backend engineering. I specialize in LLM applications, RAG pipelines, agentic workflows, scalable data pipelines, MLOps, and cloud-native production systems.
+    <header class="max-w-4xl mx-auto mb-20">
+        <h1 class="text-5xl font-bold mb-4">Hanwith Bellamkonda</h1>
+        <p class="text-xl gradient-text font-medium mb-6">Senior AI/ML Engineer | GenAI & Agentic AI</p>
+        <p class="text-gray-400 leading-relaxed mb-8">
+            8+ years of experience delivering production-ready AI solutions[cite: 1]. 
+            Specialized in designing multi-agent orchestration frameworks and large-scale RAG pipelines[cite: 1, 4].
         </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">See Projects →</a>
-          <a class="btn" href="mailto:hanwithh.b@gmail.com">Email Me</a>
+        <div class="flex gap-4">
+            <a href="mailto:hanwithh.b@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold transition">Contact Me</a>
+            <a href="#" class="border border-gray-600 hover:border-blue-400 px-6 py-2 rounded-lg transition">View GitHub</a>
         </div>
-        <div class="quick-stack">
-          <span class="chip">Python</span><span class="chip">LLMs</span><span class="chip">RAG</span><span class="chip">LangGraph</span><span class="chip">Databricks</span><span class="chip">AWS</span><span class="chip">Azure</span><span class="chip">MLflow</span>
-        </div>
-      </div>
+    </header>
 
-      <div class="hero-panel reveal">
-        <div class="panel-title">How I build AI products</div>
-        <div class="system-flow">
-          <div class="flow-item"><div class="flow-icon">01</div><div><h3>Understand the business problem</h3><p>Translate vague requirements into clear AI/ML workflows, measurable success criteria, and production constraints.</p></div></div>
-          <div class="flow-item"><div class="flow-icon">02</div><div><h3>Design the data + model system</h3><p>Build pipelines, retrieval layers, model logic, APIs, monitoring, and human review where needed.</p></div></div>
-          <div class="flow-item"><div class="flow-icon">03</div><div><h3>Deploy and improve continuously</h3><p>Use MLOps, CI/CD, observability, drift monitoring, and feedback loops to keep systems reliable.</p></div></div>
-        </div>
-      </div>
-    </section>
-
-    <div class="metrics reveal">
-      <div class="metric"><b>8+</b><span>Years in AI/ML, data science, and backend systems</span></div>
-      <div class="metric"><b>45%</b><span>Fraud investigation efficiency improvement</span></div>
-      <div class="metric"><b>75%</b><span>Reduction in clinical coding cycle time</span></div>
-      <div class="metric"><b>$0.96M</b><span>Quarterly ROI impact from forecasting work</span></div>
-    </div>
-
-    <section id="about">
-      <div class="section-head reveal">
-        <div>
-          <div class="label">About</div>
-          <h2>Clear engineering for complex AI problems.</h2>
-        </div>
-        <p>I focus on practical AI engineering: clean data pipelines, strong retrieval quality, measurable model performance, production deployment, monitoring, and stakeholder-friendly explanations.</p>
-      </div>
-
-      <div class="grid-2 resume-summary">
-        <div class="card reveal">
-          <h3>Profile Summary</h3>
-          <ul>
-            <li>Senior AI/ML Engineer with experience across finance, healthcare, retail, and backend engineering.</li>
-            <li>Hands-on with LLMs, RAG pipelines, LangChain, LangGraph, vector search, and agentic workflows.</li>
-            <li>Strong production background with Python, PySpark, Databricks, AWS, Azure, MLflow, Kubernetes, Docker, and CI/CD.</li>
-          </ul>
-        </div>
-        <div class="card reveal">
-          <h3>What makes my work different</h3>
-          <p>I do not stop at building a model. I think through the full system: data quality, retrieval, latency, security, explainability, monitoring, deployment, and user trust. This is especially important for regulated domains like finance and healthcare.</p>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects">
-      <div class="section-head reveal">
-        <div>
-          <div class="label">Projects</div>
-          <h2>Selected work from my resume.</h2>
-        </div>
-        <p>These case studies explain the problem, solution, architecture, tools, and impact behind my recent AI/ML work.</p>
-      </div>
-
-      <div class="project-grid">
-        <article class="card project reveal">
-          <div class="project-visual">
-            <div class="mini-flow"><div class="node">Data<br>Sources</div><span class="arrow">→</span><div class="node">Hybrid<br>RAG</div><span class="arrow">→</span><div class="node">AI<br>Agent</div></div>
-          </div>
-          <div>
-            <h3>AI-Powered Payment Intelligence System</h3>
-            <p><strong style="color:var(--green)">Visa · Finance · Fraud Monitoring</strong></p>
-            <p>Designed an agentic AI workflow for payment intelligence and fraud ecosystem monitoring using RAG, hybrid search, reranking, and LLM-based reasoning.</p>
-            <div class="tags"><span class="tag">Python</span><span class="tag">LangGraph</span><span class="tag">RAG</span><span class="tag">GPT-4</span><span class="tag">Pinecone</span><span class="tag">Databricks</span></div>
-            <div class="impact-row">
-              <div class="impact-box"><small>Problem</small><b>Manual fraud investigation</b></div>
-              <div class="impact-box"><small>Solution</small><b>Agentic RAG workflow</b></div>
-              <div class="impact-box"><small>Impact</small><b>45% efficiency gain</b></div>
+    <section class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-2xl font-bold mb-8 border-b border-gray-700 pb-2">Experience</h2>
+        
+        <div class="mb-12">
+            <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-semibold text-blue-400">Sr. AI/ML Engineer @ Visa</h3>
+                <span class="text-gray-500 text-sm">Jan 2025 – Present</span>
             </div>
-          </div>
-        </article>
+            <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2">
+                <li>Architected "Payment Integrity" systems using LangGraph and ReAct to automate forensic investigations[cite: 4].</li>
+                <li>Engineered autonomous agents for risk scoring, achieving a 45% efficiency gain in fraud audit latency[cite: 4].</li>
+                <li>Developed a production-grade RAG pipeline using Azure OpenAI (GPT-4) and Pinecone for 5M+ treasury documents[cite: 4].</li>
+            </ul>
+        </div>
 
-        <article class="card project reveal">
-          <div class="project-visual">
-            <div class="mini-flow"><div class="node">EHR<br>Notes</div><span class="arrow">→</span><div class="node">BioBERT<br>NER</div><span class="arrow">→</span><div class="node">Risk<br>Output</div></div>
-          </div>
-          <div>
-            <h3>AI-Based Medical Underwriting System</h3>
-            <p><strong style="color:var(--green)">USAA · Healthcare · Life Insurance</strong></p>
-            <p>Built an ML-assisted underwriting workflow to extract insights from fragmented clinical data, support coding review, and improve transparency with explainability methods.</p>
-            <div class="tags"><span class="tag">BioBERT</span><span class="tag">LLMs</span><span class="tag">SHAP</span><span class="tag">LIME</span><span class="tag">AWS</span><span class="tag">SageMaker</span></div>
-            <div class="impact-row">
-              <div class="impact-box"><small>Problem</small><b>Slow underwriting review</b></div>
-              <div class="impact-box"><small>Solution</small><b>NLP + LLM pipeline</b></div>
-              <div class="impact-box"><small>Impact</small><b>75% faster processing</b></div>
+        <div class="mb-12">
+            <div class="flex justify-between items-baseline mb-2">
+                <h3 class="text-xl font-semibold text-blue-400">ML Engineer @ USAA</h3>
+                <span class="text-gray-500 text-sm">Feb 2021 – Dec 2023</span>
             </div>
-          </div>
-        </article>
+            <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2">
+                <li>Reduced clinical coding cycle time by 75% using LangChain and GPT-3.5 reasoning chains[cite: 5].</li>
+                <li>Deployed a HIPAA-compliant clinical data lakehouse on AWS Glue, S3, and PySpark[cite: 5].</li>
+                <li>Achieved 94% F1-score in extracting comorbidities using domain-adapted BioBERT[cite: 5].</li>
+            </ul>
+        </div>
+    </section>
 
-        <article class="card project reveal">
-          <div class="project-visual">
-            <div class="mini-flow"><div class="node">Sales<br>Signals</div><span class="arrow">→</span><div class="node">Forecast<br>Models</div><span class="arrow">→</span><div class="node">Planning<br>Insights</div></div>
-          </div>
-          <div>
-            <h3>Retail Demand Forecasting Engine</h3>
-            <p><strong style="color:var(--green)">EY · Retail · Forecasting</strong></p>
-            <p>Developed forecasting and analytics pipelines using time-series models, feature engineering, gradient boosting, and Databricks-based ETL workflows.</p>
-            <div class="tags"><span class="tag">LSTM</span><span class="tag">XGBoost</span><span class="tag">PySpark</span><span class="tag">Azure</span><span class="tag">Power BI</span></div>
-            <div class="impact-row">
-              <div class="impact-box"><small>Problem</small><b>Demand uncertainty</b></div>
-              <div class="impact-box"><small>Solution</small><b>Hybrid forecasting</b></div>
-              <div class="impact-box"><small>Impact</small><b>$0.96M quarterly ROI</b></div>
+    <section class="max-w-4xl mx-auto mb-20">
+        <h2 class="text-2xl font-bold mb-8 border-b border-gray-700 pb-2">Technical Arsenal</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="card p-6 rounded-xl">
+                <h4 class="font-bold mb-3 text-blue-300">Generative AI</h4>
+                <p class="text-sm text-gray-400">LangGraph, Multi-Agent systems, RAG pipelines, PEFT (LoRA/QLoRA), Prompt Engineering.</p>
             </div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="experience">
-      <div class="section-head reveal">
-        <div>
-          <div class="label">Experience</div>
-          <h2>Career path.</h2>
+            <div class="card p-6 rounded-xl">
+                <h4 class="font-bold mb-3 text-blue-300">MLOps & Cloud</h4>
+                <p class="text-sm text-gray-400">AWS SageMaker, Kubernetes (AKS/EKS), MLflow, Docker, CI/CD pipelines.</p>
+            </div>
         </div>
-        <p>A progression from Python backend development to data science, machine learning engineering, and senior AI/ML systems.</p>
-      </div>
-
-      <div class="timeline">
-        <div class="card timeline-card reveal"><div class="date">2025 — Present</div><div><h3>Senior AI/ML Engineer · Visa</h3><p>GenAI, RAG, agentic AI, payment intelligence, fraud monitoring, Databricks, Azure OpenAI, Pinecone, MLflow, Kubernetes.</p></div></div>
-        <div class="card timeline-card reveal"><div class="date">2021 — 2023</div><div><h3>Machine Learning Engineer · USAA</h3><p>Healthcare underwriting, clinical NLP, BioBERT, LLM workflows, explainability, HIPAA-compliant AWS MLOps pipelines.</p></div></div>
-        <div class="card timeline-card reveal"><div class="date">2018 — 2021</div><div><h3>Data Scientist · EY</h3><p>Retail forecasting, consumer analytics, Azure Databricks, time-series models, segmentation, dashboards, and A/B testing.</p></div></div>
-        <div class="card timeline-card reveal"><div class="date">2017 — 2018</div><div><h3>Python Developer · Pine Labs</h3><p>Backend APIs, microservices, SQL optimization, Flask, Celery, Docker, Jenkins, TDD, and production support.</p></div></div>
-      </div>
     </section>
 
-    <section id="skills">
-      <div class="section-head reveal">
-        <div>
-          <div class="label">Skills</div>
-          <h2>Technical toolkit.</h2>
-        </div>
-        <p>A focused view of the technologies from my resume, grouped for readability instead of overwhelming the page.</p>
-      </div>
+    <footer class="max-w-4xl mx-auto text-center border-t border-gray-800 pt-10 text-gray-500 text-sm">
+        <p>© 2026 Hanwith Bellamkonda. Built with precision for AI/ML excellence.</p>
+    </footer>
 
-      <div class="grid-4">
-        <div class="card reveal"><h3>AI / GenAI</h3><div class="skills-list"><span class="skill-pill">LLMs</span><span class="skill-pill">RAG</span><span class="skill-pill">LangChain</span><span class="skill-pill">LangGraph</span><span class="skill-pill">Pinecone</span><span class="skill-pill">Prompt Engineering</span></div></div>
-        <div class="card reveal"><h3>ML / Data</h3><div class="skills-list"><span class="skill-pill">Python</span><span class="skill-pill">PyTorch</span><span class="skill-pill">TensorFlow</span><span class="skill-pill">Scikit-learn</span><span class="skill-pill">PySpark</span><span class="skill-pill">Pandas</span></div></div>
-        <div class="card reveal"><h3>Cloud / MLOps</h3><div class="skills-list"><span class="skill-pill">AWS</span><span class="skill-pill">Azure</span><span class="skill-pill">Databricks</span><span class="skill-pill">MLflow</span><span class="skill-pill">Docker</span><span class="skill-pill">Kubernetes</span></div></div>
-        <div class="card reveal"><h3>Backend / Data</h3><div class="skills-list"><span class="skill-pill">FastAPI</span><span class="skill-pill">Django</span><span class="skill-pill">SQL</span><span class="skill-pill">Snowflake</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">MongoDB</span></div></div>
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="card contact-card reveal">
-        <div>
-          <div class="label">Contact</div>
-          <h2>Let’s connect.</h2>
-          <p style="margin-top:12px; color:var(--muted); line-height:1.7;">Open to AI/ML Engineer, GenAI Engineer, Senior Data Scientist, and C2C opportunities.</p>
-        </div>
-        <a class="btn primary" href="mailto:hanwithh.b@gmail.com">hanwithh.b@gmail.com →</a>
-      </div>
-    </section>
-  </main>
-
-  <footer>© 2026 Hanwith Bellamkonda. Built with HTML, CSS, and JavaScript.</footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) entry.target.classList.add('show');
-      });
-    }, { threshold: 0.12 });
-    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
-  </script>
 </body>
 </html>
