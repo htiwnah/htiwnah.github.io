@@ -1,81 +1,977 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hanwith Bellamkonda | Senior AI/ML Engineer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <style>
-        body { background-color: #0f172a; color: #f8fafc; font-family: 'Inter', sans-serif; }
-        .gradient-text {
-            background: linear-gradient(to right, #60a5fa, #a78bfa);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-        .card { background-color: #1e293b; border: 1px solid #334155; transition: transform 0.2s; }
-        .card:hover { transform: translateY(-5px); border-color: #60a5fa; }
-    </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hanwith Bellamkonda | AI/ML Engineer</title>
+
+  <style>
+    :root {
+      --bg: #f7f2ec;
+      --card: #fffaf4;
+      --card-2: #fff;
+      --text: #171717;
+      --muted: #6b625b;
+      --red: #e10600;
+      --dark: #111111;
+      --cream: #efe2d2;
+      --border: rgba(23, 23, 23, 0.12);
+      --shadow: 0 30px 90px rgba(29, 20, 13, 0.10);
+      --radius: 30px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Inter, Arial, Helvetica, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1220px;
+      margin: 0 auto;
+      padding: 18px;
+    }
+
+    .shell {
+      background:
+        radial-gradient(circle at top left, rgba(225, 6, 0, 0.12), transparent 28%),
+        radial-gradient(circle at 75% 10%, rgba(255, 190, 80, 0.18), transparent 24%),
+        linear-gradient(180deg, #fff9f3, #f6eee5);
+      min-height: calc(100vh - 36px);
+      border-radius: 38px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    nav {
+      padding: 26px 34px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 900;
+      letter-spacing: -0.5px;
+      font-size: 21px;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      background: var(--dark);
+      color: white;
+      display: grid;
+      place-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .brand-mark::after {
+      content: "";
+      position: absolute;
+      width: 55px;
+      height: 10px;
+      background: var(--red);
+      transform: rotate(-35deg);
+    }
+
+    .brand-mark span {
+      z-index: 2;
+      font-size: 14px;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 28px;
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .nav-links a:hover {
+      color: var(--red);
+    }
+
+    .nav-cta {
+      padding: 11px 18px;
+      border: 1px solid var(--dark);
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: 0.25s;
+    }
+
+    .nav-cta:hover {
+      background: var(--dark);
+      color: white;
+    }
+
+    .hero {
+      padding: 60px 54px 70px;
+      display: grid;
+      grid-template-columns: 1fr 0.95fr;
+      gap: 42px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-weight: 800;
+      margin-bottom: 22px;
+      font-size: 14px;
+    }
+
+    .eyebrow i {
+      width: 9px;
+      height: 9px;
+      background: var(--red);
+      border-radius: 50%;
+      box-shadow: 0 0 0 6px rgba(225,6,0,0.12);
+    }
+
+    h1 {
+      font-size: clamp(50px, 7vw, 92px);
+      line-height: 0.92;
+      letter-spacing: -5px;
+      max-width: 710px;
+      margin-bottom: 24px;
+    }
+
+    h1 .outline {
+      color: transparent;
+      -webkit-text-stroke: 1.8px var(--text);
+    }
+
+    h1 .red {
+      color: var(--red);
+    }
+
+    .hero-copy {
+      color: var(--muted);
+      font-size: 18px;
+      line-height: 1.8;
+      max-width: 670px;
+      margin-bottom: 32px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 34px;
+    }
+
+    .btn {
+      padding: 15px 22px;
+      border-radius: 999px;
+      font-weight: 900;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      border: 1px solid var(--dark);
+      transition: 0.25s;
+    }
+
+    .btn-dark {
+      background: var(--dark);
+      color: white;
+    }
+
+    .btn-dark:hover {
+      transform: translateY(-3px);
+      background: var(--red);
+      border-color: var(--red);
+    }
+
+    .btn-light:hover {
+      transform: translateY(-3px);
+      background: white;
+    }
+
+    .mini-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(120px, 1fr));
+      gap: 14px;
+      max-width: 620px;
+    }
+
+    .mini-stat {
+      padding: 18px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--border);
+    }
+
+    .mini-stat strong {
+      font-size: 26px;
+      display: block;
+      color: var(--red);
+      letter-spacing: -1px;
+    }
+
+    .mini-stat span {
+      color: var(--muted);
+      font-weight: 700;
+      font-size: 13px;
+    }
+
+    .hero-card {
+      position: relative;
+      min-height: 560px;
+      background:
+        linear-gradient(160deg, rgba(17,17,17,0.96), rgba(42,30,25,0.94)),
+        radial-gradient(circle at 50% 20%, rgba(225,6,0,0.35), transparent 40%);
+      border-radius: 42px;
+      overflow: hidden;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .hero-card::before {
+      content: "AI / ML / GENAI / RAG / AGENTIC AI";
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      right: 30px;
+      color: rgba(255,255,255,0.16);
+      font-size: 13px;
+      letter-spacing: 4px;
+      font-weight: 900;
+      text-align: center;
+    }
+
+    .speed-lines {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(100deg, transparent 20%, rgba(255,255,255,0.08) 20.5%, transparent 21%),
+        linear-gradient(100deg, transparent 50%, rgba(255,255,255,0.07) 50.5%, transparent 51%),
+        linear-gradient(100deg, transparent 70%, rgba(225,6,0,0.18) 70.5%, transparent 71%);
+      transform: skewX(-8deg);
+    }
+
+    .race-number {
+      position: absolute;
+      top: 72px;
+      right: 38px;
+      font-size: 104px;
+      line-height: 1;
+      font-weight: 1000;
+      color: rgba(255,255,255,0.06);
+      letter-spacing: -8px;
+    }
+
+    .track {
+      position: absolute;
+      width: 130%;
+      height: 190px;
+      bottom: -70px;
+      background: #070707;
+      transform: rotate(-8deg);
+      border-top: 8px dashed rgba(255,255,255,0.28);
+    }
+
+    .f1-car {
+      width: 520px;
+      height: 210px;
+      position: relative;
+      z-index: 5;
+      transform: translateY(25px);
+      animation: hovercar 3.4s ease-in-out infinite;
+    }
+
+    @keyframes hovercar {
+      0%, 100% { transform: translateY(25px); }
+      50% { transform: translateY(8px); }
+    }
+
+    .main-body {
+      position: absolute;
+      width: 355px;
+      height: 66px;
+      background: linear-gradient(90deg, #8f0200, #e10600 42%, #ff443d);
+      top: 93px;
+      left: 88px;
+      border-radius: 80px 140px 50px 45px;
+      box-shadow: inset 0 -13px 0 rgba(0,0,0,0.22), 0 15px 35px rgba(225,6,0,0.25);
+    }
+
+    .main-body::before {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 10px;
+      background: #ffd66b;
+      left: 58px;
+      top: 22px;
+      border-radius: 999px;
+    }
+
+    .nose {
+      position: absolute;
+      width: 155px;
+      height: 29px;
+      top: 119px;
+      left: 6px;
+      border-radius: 999px 20px 20px 999px;
+      background: linear-gradient(90deg, #ff3c33, #e10600);
+    }
+
+    .front-wing {
+      position: absolute;
+      width: 122px;
+      height: 17px;
+      background: #0b0b0b;
+      top: 146px;
+      left: 0;
+      border-radius: 999px;
+    }
+
+    .rear-wing {
+      position: absolute;
+      width: 98px;
+      height: 18px;
+      background: #080808;
+      top: 66px;
+      right: 18px;
+      border-radius: 999px;
+      transform: rotate(-8deg);
+    }
+
+    .rear-wing::after {
+      content: "";
+      position: absolute;
+      width: 16px;
+      height: 68px;
+      background: #080808;
+      right: 14px;
+      top: 12px;
+      border-radius: 8px;
+    }
+
+    .cockpit {
+      position: absolute;
+      width: 92px;
+      height: 46px;
+      background: linear-gradient(180deg, #1f2937, #050505);
+      top: 82px;
+      left: 268px;
+      border-radius: 90px 90px 18px 18px;
+    }
+
+    .halo {
+      position: absolute;
+      width: 94px;
+      height: 74px;
+      top: 49px;
+      left: 256px;
+      border: 12px solid #080808;
+      border-bottom: 0;
+      border-radius: 80px 80px 0 0;
+    }
+
+    .wheel {
+      position: absolute;
+      width: 92px;
+      height: 92px;
+      border-radius: 50%;
+      background: #060606;
+      top: 130px;
+      border: 12px solid #272727;
+      box-shadow: inset 0 0 0 9px #6b6b6b, 0 15px 30px rgba(0,0,0,0.35);
+    }
+
+    .wheel::after {
+      content: "";
+      position: absolute;
+      inset: 26px;
+      border-radius: 50%;
+      background: #101010;
+      border: 4px solid #aaa;
+    }
+
+    .wheel-front {
+      left: 77px;
+    }
+
+    .wheel-rear {
+      right: 34px;
+    }
+
+    .label-chip {
+      position: absolute;
+      z-index: 7;
+      background: rgba(255,255,255,0.12);
+      color: white;
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(14px);
+      padding: 12px 14px;
+      border-radius: 18px;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    .chip-1 { left: 34px; bottom: 126px; }
+    .chip-2 { right: 36px; bottom: 150px; }
+    .chip-3 { left: 42%; bottom: 42px; }
+
+    .section {
+      padding: 76px 18px 0;
+    }
+
+    .section-inner {
+      max-width: 1184px;
+      margin: auto;
+    }
+
+    .section-heading {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 30px;
+      margin-bottom: 28px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(34px, 5vw, 58px);
+      line-height: 1;
+      letter-spacing: -3px;
+    }
+
+    .section-heading p {
+      max-width: 520px;
+      color: var(--muted);
+      line-height: 1.8;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .card {
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: 0 20px 50px rgba(29,20,13,0.06);
+      transition: 0.25s;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 28px 70px rgba(29,20,13,0.10);
+    }
+
+    .card .num {
+      color: var(--red);
+      font-weight: 1000;
+      margin-bottom: 38px;
+    }
+
+    .card h3 {
+      font-size: 24px;
+      letter-spacing: -1px;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--muted);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: #fff0e9;
+      border: 1px solid #ffd6c8;
+      color: #8a130c;
+      font-weight: 900;
+      font-size: 12px;
+    }
+
+    .experience-list {
+      display: grid;
+      gap: 14px;
+    }
+
+    .experience-item {
+      display: grid;
+      grid-template-columns: 210px 1fr 150px;
+      gap: 20px;
+      align-items: center;
+      background: var(--card-2);
+      border: 1px solid var(--border);
+      border-radius: 26px;
+      padding: 22px;
+    }
+
+    .role {
+      font-weight: 1000;
+      font-size: 20px;
+      letter-spacing: -0.5px;
+    }
+
+    .company {
+      color: var(--red);
+      font-weight: 900;
+    }
+
+    .desc {
+      color: var(--muted);
+      line-height: 1.7;
+    }
+
+    .year {
+      color: var(--muted);
+      font-weight: 800;
+      text-align: right;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .skill-box {
+      min-height: 180px;
+      background: #111;
+      color: white;
+      border-radius: 28px;
+      padding: 24px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .skill-box::after {
+      content: "";
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(225,6,0,0.28);
+      right: -35px;
+      bottom: -35px;
+    }
+
+    .skill-box h3 {
+      font-size: 21px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .skill-box p {
+      color: #d1d5db;
+      line-height: 1.7;
+      position: relative;
+      z-index: 2;
+    }
+
+    .contact-card {
+      margin: 84px auto 18px;
+      background:
+        radial-gradient(circle at 15% 15%, rgba(225,6,0,0.22), transparent 30%),
+        #111;
+      color: white;
+      border-radius: 38px;
+      padding: 58px;
+      text-align: center;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .contact-card h2 {
+      font-size: clamp(36px, 6vw, 70px);
+      letter-spacing: -4px;
+      line-height: 1;
+      margin-bottom: 16px;
+    }
+
+    .contact-card p {
+      max-width: 680px;
+      margin: 0 auto 28px;
+      color: #d4d4d4;
+      line-height: 1.8;
+    }
+
+    footer {
+      color: var(--muted);
+      text-align: center;
+      padding: 34px 18px 50px;
+      font-weight: 700;
+    }
+
+    @media (max-width: 980px) {
+      .hero {
+        grid-template-columns: 1fr;
+        padding: 36px 24px 48px;
+      }
+
+      nav {
+        padding: 22px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero-card {
+        min-height: 430px;
+      }
+
+      .f1-car {
+        transform: scale(0.78) translateY(25px);
+      }
+
+      @keyframes hovercar {
+        0%, 100% { transform: scale(0.78) translateY(25px); }
+        50% { transform: scale(0.78) translateY(8px); }
+      }
+
+      .mini-stats,
+      .cards,
+      .skills-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section-heading {
+        display: block;
+      }
+
+      .section-heading h2 {
+        margin-bottom: 12px;
+      }
+
+      .experience-item {
+        grid-template-columns: 1fr;
+      }
+
+      .year {
+        text-align: left;
+      }
+
+      h1 {
+        letter-spacing: -3px;
+      }
+    }
+
+    @media (max-width: 560px) {
+      .page {
+        padding: 10px;
+      }
+
+      .shell {
+        border-radius: 26px;
+      }
+
+      .hero-card {
+        min-height: 360px;
+      }
+
+      .f1-car {
+        transform: scale(0.58) translateY(25px);
+      }
+
+      @keyframes hovercar {
+        0%, 100% { transform: scale(0.58) translateY(25px); }
+        50% { transform: scale(0.58) translateY(8px); }
+      }
+
+      .contact-card {
+        padding: 36px 22px;
+      }
+    }
+  </style>
 </head>
-<body class="px-6 md:px-24 py-12">
 
-    <header class="max-w-4xl mx-auto mb-20">
-        <h1 class="text-5xl font-bold mb-4">Hanwith Bellamkonda</h1>
-        <p class="text-xl gradient-text font-medium mb-6">Senior AI/ML Engineer | GenAI & Agentic AI</p>
-        <p class="text-gray-400 leading-relaxed mb-8">
-            8+ years of experience delivering production-ready AI solutions[cite: 1]. 
-            Specialized in designing multi-agent orchestration frameworks and large-scale RAG pipelines[cite: 1, 4].
+<body>
+  <div class="page">
+    <div class="shell">
+      <nav>
+        <a href="#" class="brand">
+          <span class="brand-mark"><span>HB</span></span>
+          Hanwith Bellamkonda
+        </a>
+
+        <div class="nav-links">
+          <a href="#work">Work</a>
+          <a href="#experience">Experience</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </div>
+
+        <a class="nav-cta" href="mailto:hanwithh.b@gmail.com">Let’s Talk</a>
+      </nav>
+
+      <section class="hero">
+        <div>
+          <div class="eyebrow"><i></i> Senior AI/ML Engineer · GenAI · Agentic AI</div>
+
+          <h1>
+            AI systems with <span class="outline">precision</span> and <span class="red">speed.</span>
+          </h1>
+
+          <p class="hero-copy">
+            I build production-ready AI, ML, RAG, and agentic systems across finance, healthcare, and retail.
+            My work connects data engineering, model development, deployment, monitoring, and business impact.
+          </p>
+
+          <div class="hero-actions">
+            <a class="btn btn-dark" href="#work">View My Work →</a>
+            <a class="btn btn-light" href="mailto:hanwithh.b@gmail.com">Email Me</a>
+          </div>
+
+          <div class="mini-stats">
+            <div class="mini-stat">
+              <strong>8+</strong>
+              <span>Years in AI/ML & Backend</span>
+            </div>
+            <div class="mini-stat">
+              <strong>45%</strong>
+              <span>Fraud audit efficiency gain</span>
+            </div>
+            <div class="mini-stat">
+              <strong>94%</strong>
+              <span>BioBERT NER F1-score</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-card">
+          <div class="speed-lines"></div>
+          <div class="race-number">01</div>
+
+          <div class="label-chip chip-1">RAG Pipelines</div>
+          <div class="label-chip chip-2">Agentic AI</div>
+          <div class="label-chip chip-3">MLOps</div>
+
+          <div class="f1-car" aria-label="Ferrari inspired Formula 1 car">
+            <div class="rear-wing"></div>
+            <div class="halo"></div>
+            <div class="cockpit"></div>
+            <div class="nose"></div>
+            <div class="front-wing"></div>
+            <div class="main-body"></div>
+            <div class="wheel wheel-front"></div>
+            <div class="wheel wheel-rear"></div>
+          </div>
+
+          <div class="track"></div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <section class="section" id="work">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Selected Work</h2>
+        <p>
+          Clean portfolio sections similar to the reference style, but personalized around your AI/ML,
+          GenAI, finance, healthcare, and data engineering background.
         </p>
-        <div class="flex gap-4">
-            <a href="mailto:hanwithh.b@gmail.com" class="bg-blue-600 hover:bg-blue-700 px-6 py-2 rounded-lg font-semibold transition">Contact Me</a>
-            <a href="#" class="border border-gray-600 hover:border-blue-400 px-6 py-2 rounded-lg transition">View GitHub</a>
+      </div>
+
+      <div class="cards">
+        <article class="card">
+          <div class="num">01</div>
+          <h3>Payment Intelligence System</h3>
+          <p>
+            AI-driven fraud monitoring and transaction intelligence platform using LLMs, RAG,
+            LangGraph, ReAct-style agents, Pinecone, hybrid search, and human review workflows.
+          </p>
+          <div class="tags">
+            <span class="tag">Azure OpenAI</span>
+            <span class="tag">LangGraph</span>
+            <span class="tag">RAG</span>
+            <span class="tag">Pinecone</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="num">02</div>
+          <h3>AI-Assisted Underwriting</h3>
+          <p>
+            Built healthcare and life-insurance ML workflows for EHR processing, ICD/CPT code discovery,
+            risk scoring, explainable AI, and HIPAA-aware model governance.
+          </p>
+          <div class="tags">
+            <span class="tag">BioBERT</span>
+            <span class="tag">SHAP</span>
+            <span class="tag">LIME</span>
+            <span class="tag">AWS</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="num">03</div>
+          <h3>Retail Forecasting Engine</h3>
+          <p>
+            Demand forecasting system using PySpark, Azure Databricks, LSTM, SARIMA, Prophet,
+            XGBoost, Power BI, and model monitoring for supply chain planning.
+          </p>
+          <div class="tags">
+            <span class="tag">PySpark</span>
+            <span class="tag">LSTM</span>
+            <span class="tag">Prophet</span>
+            <span class="tag">Power BI</span>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="experience">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Experience</h2>
+        <p>
+          From Python backend development to data science, ML engineering, and senior GenAI system design.
+        </p>
+      </div>
+
+      <div class="experience-list">
+        <div class="experience-item">
+          <div>
+            <div class="company">Visa</div>
+            <div class="role">Sr. AI/ML Engineer</div>
+          </div>
+          <div class="desc">
+            Architecting RAG, LLM, multi-agent, fraud monitoring, payment intelligence, MLOps,
+            observability, and secure deployment workflows.
+          </div>
+          <div class="year">2025 – Present</div>
         </div>
-    </header>
 
-    <section class="max-w-4xl mx-auto mb-20">
-        <h2 class="text-2xl font-bold mb-8 border-b border-gray-700 pb-2">Experience</h2>
-        
-        <div class="mb-12">
-            <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-semibold text-blue-400">Sr. AI/ML Engineer @ Visa</h3>
-                <span class="text-gray-500 text-sm">Jan 2025 – Present</span>
-            </div>
-            <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2">
-                <li>Architected "Payment Integrity" systems using LangGraph and ReAct to automate forensic investigations[cite: 4].</li>
-                <li>Engineered autonomous agents for risk scoring, achieving a 45% efficiency gain in fraud audit latency[cite: 4].</li>
-                <li>Developed a production-grade RAG pipeline using Azure OpenAI (GPT-4) and Pinecone for 5M+ treasury documents[cite: 4].</li>
-            </ul>
+        <div class="experience-item">
+          <div>
+            <div class="company">USAA</div>
+            <div class="role">Machine Learning Engineer</div>
+          </div>
+          <div class="desc">
+            Delivered ML-assisted underwriting using LLM workflows, BioBERT, AWS, explainable AI,
+            data lakehouse design, and HIPAA-compliant pipelines.
+          </div>
+          <div class="year">2021 – 2023</div>
         </div>
 
-        <div class="mb-12">
-            <div class="flex justify-between items-baseline mb-2">
-                <h3 class="text-xl font-semibold text-blue-400">ML Engineer @ USAA</h3>
-                <span class="text-gray-500 text-sm">Feb 2021 – Dec 2023</span>
-            </div>
-            <ul class="list-disc list-outside ml-5 text-gray-300 space-y-2">
-                <li>Reduced clinical coding cycle time by 75% using LangChain and GPT-3.5 reasoning chains[cite: 5].</li>
-                <li>Deployed a HIPAA-compliant clinical data lakehouse on AWS Glue, S3, and PySpark[cite: 5].</li>
-                <li>Achieved 94% F1-score in extracting comorbidities using domain-adapted BioBERT[cite: 5].</li>
-            </ul>
+        <div class="experience-item">
+          <div>
+            <div class="company">EY</div>
+            <div class="role">Data Scientist</div>
+          </div>
+          <div class="desc">
+            Built forecasting, customer analytics, ETL, monitoring, and BI systems for retail demand,
+            pricing, and supply chain optimization.
+          </div>
+          <div class="year">2018 – 2021</div>
         </div>
-    </section>
 
-    <section class="max-w-4xl mx-auto mb-20">
-        <h2 class="text-2xl font-bold mb-8 border-b border-gray-700 pb-2">Technical Arsenal</h2>
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-            <div class="card p-6 rounded-xl">
-                <h4 class="font-bold mb-3 text-blue-300">Generative AI</h4>
-                <p class="text-sm text-gray-400">LangGraph, Multi-Agent systems, RAG pipelines, PEFT (LoRA/QLoRA), Prompt Engineering.</p>
-            </div>
-            <div class="card p-6 rounded-xl">
-                <h4 class="font-bold mb-3 text-blue-300">MLOps & Cloud</h4>
-                <p class="text-sm text-gray-400">AWS SageMaker, Kubernetes (AKS/EKS), MLflow, Docker, CI/CD pipelines.</p>
-            </div>
+        <div class="experience-item">
+          <div>
+            <div class="company">Pine Labs</div>
+            <div class="role">Python Developer</div>
+          </div>
+          <div class="desc">
+            Migrated SOAP monoliths to Python microservices, built reusable backend utilities,
+            optimized SQL workflows, and implemented CI/CD automation.
+          </div>
+          <div class="year">2017 – 2018</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </section>
 
-    <footer class="max-w-4xl mx-auto text-center border-t border-gray-800 pt-10 text-gray-500 text-sm">
-        <p>© 2026 Hanwith Bellamkonda. Built with precision for AI/ML excellence.</p>
-    </footer>
+  <section class="section" id="skills">
+    <div class="section-inner">
+      <div class="section-heading">
+        <h2>Skill Stack</h2>
+        <p>
+          A focused view of the technologies that make your profile strong for AI/ML, GenAI, and MLOps roles.
+        </p>
+      </div>
 
+      <div class="skills-grid">
+        <div class="skill-box">
+          <h3>Generative AI</h3>
+          <p>GPT-4, LLaMA, RAG, LangChain, LangGraph, ReAct agents, prompt engineering, guardrails.</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>Machine Learning</h3>
+          <p>PyTorch, TensorFlow, Scikit-Learn, XGBoost, LightGBM, BioBERT, Hugging Face.</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>Data Engineering</h3>
+          <p>Python, SQL, PySpark, Databricks, Snowflake, AWS Glue, Airflow, PostgreSQL.</p>
+        </div>
+
+        <div class="skill-box">
+          <h3>MLOps</h3>
+          <p>MLflow, Docker, Kubernetes, CI/CD, Prometheus, Grafana, CloudWatch, model monitoring.</p>
+        </div>
+      </div>
+
+      <div class="contact-card" id="contact">
+        <h2>Ready to build the next AI system?</h2>
+        <p>
+          Open to AI/ML Engineer, GenAI Engineer, Machine Learning Engineer, and Agentic AI roles
+          across finance, healthcare, retail, and enterprise AI platforms.
+        </p>
+        <div class="hero-actions" style="justify-content:center;margin-bottom:0;">
+          <a class="btn btn-dark" style="background:white;color:#111;border-color:white;" href="mailto:hanwithh.b@gmail.com">hanwithh.b@gmail.com</a>
+          <a class="btn btn-light" style="color:white;border-color:white;" href="#">LinkedIn</a>
+          <a class="btn btn-light" style="color:white;border-color:white;" href="#">GitHub</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    © 2026 Hanwith Bellamkonda · F1-inspired AI/ML portfolio
+  </footer>
 </body>
 </html>
